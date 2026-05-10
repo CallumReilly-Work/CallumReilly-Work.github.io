@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Callum Reilly — Senior IT Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #fafaf8;
+      --text: #1c1c1a;
+      --muted: #737370;
+      --hint: #adadaa;
+      --border: rgba(0,0,0,0.07);
+      --accent: #1a6650;
+      --accent-bg: #edf7f3;
+      --accent-text: #1a6650;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .wrap {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 0 1.75rem;
+    }
+
+    nav {
+      padding: 1.25rem 0;
+      border-bottom: 0.5px solid var(--border);
+    }
+    nav .wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-name { font-size: 14px; font-weight: 500; }
+    .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+    .nav-links a { font-size: 13px; color: var(--muted); text-decoration: none; }
+    .nav-links a:hover { color: var(--text); }
+
+    .hero { padding: 4.5rem 0 3.5rem; }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 4px 11px;
+      border-radius: 20px;
+      background: var(--accent-bg);
+      color: var(--accent-text);
+      margin-bottom: 1.5rem;
+    }
+    .tag::before {
+      content: '';
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: blink 2.5s ease-in-out infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+    h1 {
+      font-size: clamp(34px, 5.5vw, 48px);
+      font-weight: 300;
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+      margin-bottom: 1.25rem;
+    }
+    h1 strong { font-weight: 500; }
+    .hero p {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.8;
+      max-width: 520px;
+    }
+
+    section {
+      padding: 3rem 0;
+      border-top: 0.5px solid var(--border);
+    }
+
+    .label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--hint);
+      margin-bottom: 1.5rem;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border: 0.5px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .skill-card {
+      padding: 1.125rem 1.25rem;
+      border-right: 0.5px solid var(--border);
+      border-bottom: 0.5px solid var(--border);
+    }
+    .skill-card:nth-child(2n) { border-right: none; }
+    .skill-card:nth-child(3), .skill-card:nth-child(4) { border-bottom: none; }
+    .skill-title { font-size: 12px; font-weight: 500; margin-bottom: 4px; }
+    .skill-items { font-size: 12px; color: var(--muted); line-height: 1.6; }
+
+    .projects { border: 0.5px solid var(--border); border-radius: 10px; overflow: hidden; }
+    .project {
+      padding: 1.25rem 1.5rem;
+      border-bottom: 0.5px solid var(--border);
+    }
+    .project:last-child { border-bottom: none; }
+    .project-name { font-size: 13px; font-weight: 500; margin-bottom: 4px; }
+    .project-desc { font-size: 13px; color: var(--muted); line-height: 1.65; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+    .tag-pill {
+      font-size: 10px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      border: 0.5px solid var(--border);
+      color: var(--hint);
+    }
+
+    .certs { border: 0.5px solid var(--border); border-radius: 10px; overflow: hidden; }
+    .cert-group { border-bottom: 0.5px solid var(--border); padding: 1.125rem 1.25rem; }
+    .cert-group:last-child { border-bottom: none; }
+    .cert-group-name { font-size: 10px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--hint); margin-bottom: 0.75rem; }
+    .cert-list { display: flex; flex-direction: column; gap: 4px; }
+    .cert-item { font-size: 12px; color: var(--muted); }
+    .cert-code { font-size: 10px; color: var(--hint); margin-right: 6px; }
+
+    .contact-list { border: 0.5px solid var(--border); border-radius: 10px; overflow: hidden; }
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 1rem 1.25rem;
+      border-bottom: 0.5px solid var(--border);
+    }
+    .contact-row:last-child { border-bottom: none; }
+    .contact-row svg { width: 15px; height: 15px; color: var(--hint); flex-shrink: 0; }
+    .contact-row a { font-size: 13px; color: var(--text); text-decoration: none; }
+    .contact-row a:hover { color: var(--accent); }
+    .contact-row span { font-size: 13px; color: var(--muted); }
+
+    footer {
+      border-top: 0.5px solid var(--border);
+      padding: 2rem 0;
+      text-align: center;
+    }
+    footer p { font-size: 11px; color: var(--hint); }
+
+    @media (max-width: 520px) {
+      .skills-grid { grid-template-columns: 1fr; }
+      .skill-card { border-right: none; }
+      .skill-card:nth-child(3) { border-bottom: 0.5px solid var(--border); }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <span class="nav-name">Callum Reilly</span>
+    <ul class="nav-links">
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certs">Certs</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <div class="hero">
+    <div class="tag">Open to opportunities</div>
+    <h1>Senior <strong>IT</strong><br>Engineer</h1>
+    <p>Automation, Microsoft, security, Intune. 7+ years delivering across venture capital, financial services, and UK critical national infrastructure.</p>
+  </div>
+
+  <section id="skills">
+    <p class="label">Skills</p>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-title">Microsoft 365 &amp; Azure</div>
+        <div class="skill-items">End-to-end Intune, Teams Voice and Defender deployments. Exchange, SharePoint, Entra ID, Azure AD administration across enterprise environments.</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-title">Security operations</div>
+        <div class="skill-items">KQL threat hunting, Purview breach and activity investigations, incident response, conditional access policies</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-title">Scripting & automation</div>
+        <div class="skill-items">Python, PowerShell, Microsoft Graph API, REST API integrations</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-title">Multi-platform</div>
+        <div class="skill-items">Okta, Google Workspace, JAMF Pro/Protect, Active Directory, Mimecast</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <p class="label">Projects</p>
+    <div class="projects">
+
+      <div class="project">
+        <div class="project-name">SharePoint permissions auditor</div>
+        <div class="project-desc">Automatically maps access rights across multi-tenant SharePoint environments, surfacing overprivileged users and orphaned permissions. Replaced a manual review process with no consistent cadence.</div>
+        <div class="project-tags">
+          <span class="tag-pill">Python</span>
+          <span class="tag-pill">Microsoft Graph API</span>
+          <span class="tag-pill">Multi-tenant</span>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-name">Dropbox permissions auditor</div>
+        <div class="project-desc">Audits Dropbox sharing permissions at scale, identifying externally shared folders and misconfigured access — giving security teams a clear picture of data exposure risk across the organisation.</div>
+        <div class="project-tags">
+          <span class="tag-pill">Python</span>
+          <span class="tag-pill">Dropbox API</span>
+          <span class="tag-pill">Security</span>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-name">Standard Metrics dashboard rebuild</div>
+        <div class="project-desc">Rebuilt a client's Standard Metrics implementation using the platform's API to better fit business needs, with a specific focus on tracking outstanding filings. Turned a generic dashboard into a focused operational tool the team actually relies on.</div>
+        <div class="project-tags">
+          <span class="tag-pill">Standard Metrics API</span>
+          <span class="tag-pill">Python</span>
+          <span class="tag-pill">Internal tooling</span>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-name">Brivo → Slack physical security alerts</div>
+        <div class="project-desc">Integrated Brivo access control with Slack to deliver scheduled alerts on building entry events and alarm status, replacing a daily manual log review with automated, real-time notifications.</div>
+        <div class="project-tags">
+          <span class="tag-pill">Brivo API</span>
+          <span class="tag-pill">Slack webhooks</span>
+          <span class="tag-pill">Automation</span>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-name">Code42 suspicious file sharing reports</div>
+        <div class="project-desc">Built a custom scripted reporting tool that collates Code42 suspicious file sharing activity into a formatted Excel report on demand — one click instead of manually pulling and cross-referencing data from multiple views.</div>
+        <div class="project-tags">
+          <span class="tag-pill">Code42 API</span>
+          <span class="tag-pill">Python</span>
+          <span class="tag-pill">Excel / openpyxl</span>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-name">Meraki → Slack security alerts</div>
+        <div class="project-desc">Custom integration connecting Meraki Security Centre to Slack via webhooks, automating MX security alert notifications and eliminating manual log monitoring entirely.</div>
+        <div class="project-tags">
+          <span class="tag-pill">Meraki API</span>
+          <span class="tag-pill">Slack webhooks</span>
+          <span class="tag-pill">Automation</span>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-name">Okta → Slack user activity alerts</div>
+        <div class="project-desc">Built a custom integration that monitors Okta user activity and pipes targeted alerts into Slack based on configurable trigger conditions — giving the security team real-time visibility of suspicious or notable authentication events.</div>
+        <div class="project-tags">
+          <span class="tag-pill">Okta API</span>
+          <span class="tag-pill">Slack webhooks</span>
+          <span class="tag-pill">Security</span>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-name">Apple Business Manager → Slack device alerts</div>
+        <div class="project-desc">Integrated Apple Business Manager with Slack to deliver real-time notifications on device registrations, releases, and MDM status changes — replacing the need to manually monitor ABM for fleet activity.</div>
+        <div class="project-tags">
+          <span class="tag-pill">Apple Business Manager API</span>
+          <span class="tag-pill">Slack webhooks</span>
+          <span class="tag-pill">MDM</span>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-name">KnowBe4 automated compliance reporting</div>
+        <div class="project-desc">Built an automated reporting system using the KnowBe4 API that generates formatted compliance reports on a schedule, eliminating the manual data compilation that previously took hours each cycle.</div>
+        <div class="project-tags">
+          <span class="tag-pill">KnowBe4 API</span>
+          <span class="tag-pill">Python</span>
+          <span class="tag-pill">Compliance</span>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-name">Push Security — AI platform audit dashboard</div>
+        <div class="project-desc">Rebuilt a client's Push Security dashboard using the API to audit AI platforms being accessed across the business — giving security teams a clear, up-to-date view of shadow AI usage and associated risk.</div>
+        <div class="project-tags">
+          <span class="tag-pill">Push Security API</span>
+          <span class="tag-pill">Python</span>
+          <span class="tag-pill">Shadow AI</span>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-name">M365 license auditor</div>
+        <div class="project-desc">Automated tool using Microsoft Graph API to identify unused M365 licenses across the tenant, feeding directly into cost reduction decisions for clients.</div>
+        <div class="project-tags">
+          <span class="tag-pill">Python</span>
+          <span class="tag-pill">Microsoft Graph API</span>
+          <span class="tag-pill">Cost optimisation</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="certs">
+    <p class="label">Certifications</p>
+    <div class="certs">
+
+      <div class="cert-group">
+        <div class="cert-group-name">Microsoft — Administration</div>
+        <div class="cert-list">
+          <div class="cert-item"><span class="cert-code">MS-102</span>Microsoft 365 Certified: Administrator Expert</div>
+          <div class="cert-item"><span class="cert-code">AZ-104</span>Microsoft Certified: Azure Administrator Associate</div>
+          <div class="cert-item"><span class="cert-code">MD-102</span>Microsoft 365 Certified: Endpoint Administrator Associate</div>
+          <div class="cert-item"><span class="cert-code">MS-700</span>Microsoft 365 Certified: Teams Administrator Associate</div>
+        </div>
+      </div>
+
+      <div class="cert-group">
+        <div class="cert-group-name">Microsoft — Security</div>
+        <div class="cert-list">
+          <div class="cert-item"><span class="cert-code">AZ-500</span>Microsoft Certified: Azure Security Engineer Associate</div>
+          <div class="cert-item"><span class="cert-code">SC-200</span>Microsoft Certified: Security Operations Analyst Associate</div>
+          <div class="cert-item"><span class="cert-code">SC-300</span>Microsoft Certified: Identity and Access Administrator Associate</div>
+          <div class="cert-item"><span class="cert-code">SC-401</span>Microsoft Certified: Information Protection and Compliance Administrator Associate</div>
+        </div>
+      </div>
+
+      <div class="cert-group">
+        <div class="cert-group-name">CompTIA</div>
+        <div class="cert-list">
+          <div class="cert-item">CompTIA A+</div>
+          <div class="cert-item">CompTIA Network+</div>
+          <div class="cert-item">CompTIA Security+</div>
+        </div>
+      </div>
+
+      <div class="cert-group">
+        <div class="cert-group-name">Multi-platform</div>
+        <div class="cert-list">
+          <div class="cert-item">Google Workspace Associate Administrator</div>
+          <div class="cert-item">Jamf Certified Associate — Jamf Pro</div>
+          <div class="cert-item">Jamf Certified Associate — Jamf Protect</div>
+        </div>
+      </div>
+
+      <div class="cert-group">
+        <div class="cert-group-name">AI</div>
+        <div class="cert-list">
+          <div class="cert-item"><span class="cert-code">AB-900</span>Microsoft 365 Copilot and Agent Administration Fundamentals</div>
+          <div class="cert-item"><span class="cert-code">AB-731</span>AI Transformation Leader</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="contact">
+    <p class="label">Contact</p>
+    <div class="contact-list">
+      <div class="contact-row">
+        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+        <a href="mailto:callum@callum-reilly.co.uk">callum@callum-reilly.co.uk</a>
+      </div>
+      <div class="contact-row">
+        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"/></svg>
+        <a href="https://www.linkedin.com/in/callum-reilly-/" target="_blank" rel="noopener">linkedin.com/in/callum-reilly-/</a>
+      </div>
+      <div class="contact-row">
+        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253M3 12c0 .778.099 1.533.284 2.253"/></svg>
+        <a href="https://github.com/CallumReilly-Work" target="_blank" rel="noopener">github.com/CallumReilly-Work</a>
+      </div>
+      <div class="contact-row">
+        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+        <span>London, UK</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>BSc (Hons) Business Information Technology · Birmingham City University · 2017</p>
+  </footer>
+
+</div>
+</body>
+</html>
