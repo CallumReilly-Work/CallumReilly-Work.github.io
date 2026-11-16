@@ -5,6 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Callum Reilly — Senior Technical Engineer specialising in Microsoft 365 security and identity. Conditional Access, Intune, Defender and automation across financial services, venture capital and critical national infrastructure. Open to new opportunities." />
   <title>Callum Reilly — Senior Technical Engineer | M365 Security &amp; Identity</title>
+  <link rel="canonical" href="https://www.callum-reilly.co.uk/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Callum Reilly — Senior Technical Engineer | M365 Security &amp; Identity" />
+  <meta property="og:description" content="Securing Microsoft 365 and identity: Conditional Access, Intune, Defender and automation. 3rd-line escalation across financial services, venture capital and critical national infrastructure." />
+  <meta property="og:url" content="https://www.callum-reilly.co.uk/" />
+  <meta property="og:image" content="https://www.callum-reilly.co.uk/Picture.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Callum Reilly",
+    "jobTitle": "Senior Technical Engineer",
+    "description": "Senior engineer securing Microsoft 365 and identity.",
+    "url": "https://www.callum-reilly.co.uk/",
+    "email": "mailto:callum@callum-reilly.co.uk",
+    "image": "https://www.callum-reilly.co.uk/Picture.jpg",
+    "address": { "@type": "PostalAddress", "addressLocality": "London", "addressCountry": "GB" },
+    "alumniOf": "Birmingham City University",
+    "sameAs": ["https://www.linkedin.com/in/callum-reilly-", "https://github.com/CallumReilly-Work"],
+    "knowsAbout": ["Microsoft 365", "Entra ID", "Conditional Access", "Intune", "Microsoft Defender", "Microsoft Purview", "KQL", "Okta", "PowerShell", "Python", "Microsoft Graph API"]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
   <style>
@@ -218,6 +241,43 @@
     .contact-row a:hover { color: var(--accent); }
     .contact-row span { font-size: 13px; color: var(--muted); }
 
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border: 0.5px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 3rem;
+    }
+    .stat { padding: 1rem 1.1rem; border-right: 0.5px solid var(--border); }
+    .stat:last-child { border-right: none; }
+    .stat-num { font-size: 22px; font-weight: 500; letter-spacing: -0.02em; color: var(--accent); line-height: 1.2; }
+    .stat-label { font-size: 11px; color: var(--muted); line-height: 1.4; margin-top: 2px; }
+
+    .job-meta { font-size: 12px; color: var(--hint); margin-bottom: 8px; }
+    .job-list { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+    .job-list li { font-size: 13px; color: var(--muted); line-height: 1.6; padding-left: 14px; position: relative; }
+    .job-list li::before { content: '–'; position: absolute; left: 0; color: var(--hint); }
+    .job-list b { font-weight: 500; color: var(--text); }
+    .role-sub { font-size: 13px; font-weight: 500; margin: 1rem 0 2px; }
+
+    .more { margin-top: 0.75rem; }
+    .more summary {
+      cursor: pointer;
+      list-style: none;
+      text-align: center;
+      padding: 0.85rem 1.25rem;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--accent);
+      border: 0.5px solid var(--border);
+      border-radius: 10px;
+    }
+    .more summary::-webkit-details-marker { display: none; }
+    .more summary:hover { background: var(--accent-bg); }
+    .more[open] summary { margin-bottom: 0.75rem; }
+    .more[open] summary .closed, .more:not([open]) summary .opened { display: none; }
+
     footer {
       border-top: 0.5px solid var(--border);
       padding: 2rem 0;
@@ -232,6 +292,9 @@
       .hero { padding: 3rem 0 2.5rem; flex-direction: column; gap: 1.75rem; }
       .hero-image { width: 100%; height: 280px; border-radius: 10px; }
       .skills-grid { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: 1fr 1fr; }
+      .stat:nth-child(2n) { border-right: none; }
+      .stat:nth-child(-n+2) { border-bottom: 0.5px solid var(--border); }
       .skill-card { border-right: none; }
       .skill-card:last-child { border-bottom: none; }
       .project { padding: 1.125rem 1.25rem; }
@@ -244,6 +307,7 @@
   <div class="wrap">
     <span class="nav-name">Callum Reilly</span>
     <ul class="nav-links">
+      <li><a href="#experience">Experience</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#certs">Certs</a></li>
       <li><a href="#projects">Projects</a></li>
@@ -261,10 +325,11 @@
       <p class="hero-availability">M365 Security &amp; Identity &nbsp;·&nbsp; London / hybrid &nbsp;·&nbsp; Contract or permanent</p>
       <p>Senior engineer securing Microsoft 365 and identity. Hands-on with Conditional Access, Intune and Defender, plus automation that keeps estates auditable. 3rd-line escalation point across financial services, venture capital and critical national infrastructure.</p>
       <div class="hero-actions">
-        <a href="https://flowcv.com/resume/oom1hb4pwq" target="_blank" rel="noopener" class="btn btn-primary">
+        <a href="Callum-Reilly-CV.pdf" target="_blank" rel="noopener" class="btn btn-primary">
           <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
-          View CV
+          Download CV (PDF)
         </a>
+        <a href="mailto:callum@callum-reilly.co.uk?subject=Opportunity%20for%20Callum%20Reilly" class="btn btn-secondary">Email me</a>
         <a href="https://www.linkedin.com/in/callum-reilly-" target="_blank" rel="noopener" class="btn btn-secondary">LinkedIn</a>
       </div>
     </div>
@@ -272,6 +337,50 @@
       <img src="Picture.jpg" alt="Callum Reilly" />
     </div>
   </div>
+
+  <div class="stats">
+    <div class="stat"><div class="stat-num">7+ yrs</div><div class="stat-label">in enterprise IT and security</div></div>
+    <div class="stat"><div class="stat-num">20,000+</div><div class="stat-label">employees supported at National Grid</div></div>
+    <div class="stat"><div class="stat-num">2 Expert</div><div class="stat-label">certs: SC-100 and MS-102</div></div>
+    <div class="stat"><div class="stat-num">3rd line</div><div class="stat-label">escalation across enterprise estates</div></div>
+  </div>
+
+  <section id="experience">
+    <p class="label">Experience</p>
+    <div class="projects">
+
+      <div class="project">
+        <div class="project-name">Alternit One</div>
+        <div class="job-meta">London &nbsp;·&nbsp; 02/2023 – present</div>
+
+        <div class="role-sub" style="margin-top:0;">Senior Technical Engineer <span style="color:var(--hint);font-weight:400;">· 08/2024 – present</span></div>
+        <ul class="job-list">
+          <li><b>Identity &amp; endpoint:</b> deployed Intune and Conditional Access policies; on-site in the UAE for a week onboarding a client onto Intune.</li>
+          <li><b>Phishing-resistant MFA:</b> implemented FIDO keys with Conditional Access and a new authentication context; built an audit report.</li>
+          <li><b>M365 administration:</b> Exchange, Teams, SharePoint, Defender and Entra ID for global clients, plus dedicated project support for world-leading venture capital clients across Okta, Google Workspace and JAMF.</li>
+          <li><b>Security operations:</b> remediated Defender-flagged CVEs via Intune remediations, ran KQL threat hunts, and led breach investigations with Microsoft Purview auditing.</li>
+          <li><b>Automation &amp; integrations:</b> SharePoint auditing tools, an Okta security platform, a Python and Graph API licence auditor, an Okta and Push Security sync, KnowBe4 reporting, and HaloITSM ticket reporting.</li>
+          <li><b>Escalation:</b> 3rd line escalation point for complex issues across enterprise environments.</li>
+        </ul>
+
+        <div class="role-sub">Technical Engineer <span style="color:var(--hint);font-weight:400;">· 02/2023 – 08/2024 · City of London</span></div>
+        <ul class="job-list">
+          <li><b>24/7 support</b> for global financial services clients, including white-glove C-suite support across London, Europe, USA and UAE.</li>
+          <li><b>Field service:</b> dedicated field service engineer for client sites.</li>
+        </ul>
+      </div>
+
+      <div class="project">
+        <div class="project-name">Desktop Support Engineer — National Grid (Atos contractor)</div>
+        <div class="job-meta">Warwick &nbsp;·&nbsp; 05/2019 – 01/2023</div>
+        <ul class="job-list">
+          <li><b>Scale:</b> supported 20,000+ employees across critical national infrastructure, including UK energy control centres.</li>
+          <li><b>Windows 10 rollout:</b> 7,000+ computers; transitioned the help desk to remote operations during COVID-19.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
 
   <section id="skills">
     <p class="label">Skills</p>
@@ -353,9 +462,19 @@
   </section>
 
   <section id="projects">
-    <p class="label">Projects</p>
+    <p class="label">Selected projects</p>
     <div class="projects">
 
+      <div class="project">
+        <div class="project-name">Okta security platform</div>
+        <div class="project-desc">Co-built with a client IT manager: an Okta SSO platform of three web apps for IT and C-suite. <em>Dropbox Audit</em> gives a live audit of permissions, users and devices with exportable reports. <em>Okta Alerting</em> sends real-time Slack alerts on identity events and policy violations, replacing manual log review. <em>Brivo Access Monitor</em> sends Slack alerts on building entry events, alarm status and out-of-hours access.</div>
+        <div class="project-tags">
+          <span class="tag-pill">Okta SSO</span>
+          <span class="tag-pill">Dropbox API</span>
+          <span class="tag-pill">Brivo API</span>
+          <span class="tag-pill">Slack webhooks</span>
+        </div>
+      </div>
       <div class="project">
         <div class="project-name">Phishing-resistant MFA rollout</div>
         <div class="project-desc">Implemented FIDO security keys enforced through Conditional Access and a new authentication context, and built an audit report to track adoption and coverage.</div>
@@ -365,37 +484,6 @@
           <span class="tag-pill">FIDO</span>
         </div>
       </div>
-
-      <div class="project">
-        <div class="project-name">Okta ↔ Push Security data sync</div>
-        <div class="project-desc">Custom data sync between Okta and Push Security where no native integration existed, keeping identity and browser-security data aligned without manual exports.</div>
-        <div class="project-tags">
-          <span class="tag-pill">Okta API</span>
-          <span class="tag-pill">Push Security API</span>
-          <span class="tag-pill">Python</span>
-        </div>
-      </div>
-
-      <div class="project">
-        <div class="project-name">HaloITSM management reporting</div>
-        <div class="project-desc">Rebuilt management ticket reporting for the business using the HaloITSM API, replacing manual reporting with a consistent, repeatable view of service performance.</div>
-        <div class="project-tags">
-          <span class="tag-pill">HaloITSM API</span>
-          <span class="tag-pill">Python</span>
-          <span class="tag-pill">Reporting</span>
-        </div>
-      </div>
-
-      <div class="project">
-        <div class="project-name">Politburo Council</div>
-        <div class="project-desc">A Claude Code skill that adds eight historical Soviet-era leader personas — Lenin, Stalin, Khrushchev, Brezhnev, Andropov, Chernenko, Gorbachev, and wildcard Yeltsin — for reviewing work. Run one persona or the full council to surface genuine disagreement between distinct risk and change philosophies, on code, writing, strategy, or planning.</div>
-        <div class="project-tags">
-          <span class="tag-pill">Claude Code</span>
-          <span class="tag-pill">AI Skill</span>
-          <span class="tag-pill"><a href="https://github.com/CallumReilly-Work/politburo-council" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">GitHub ↗</a></span>
-        </div>
-      </div>
-
       <div class="project">
         <div class="project-name">SharePoint permissions auditor</div>
         <div class="project-desc">Automatically maps access rights across multi-tenant SharePoint environments, surfacing overprivileged users and orphaned permissions. Replaced a manual review process with no consistent cadence.</div>
@@ -405,77 +493,24 @@
           <span class="tag-pill">Multi-tenant</span>
         </div>
       </div>
-
       <div class="project">
-        <div class="project-name">Dropbox permissions auditor</div>
-        <div class="project-desc">Audits Dropbox sharing permissions at scale, identifying externally shared folders and misconfigured access — giving security teams a clear picture of data exposure risk across the organisation.</div>
+        <div class="project-name">M365 license auditor</div>
+        <div class="project-desc">Automated tool using Microsoft Graph API to identify unused M365 licenses across the tenant, feeding directly into cost reduction decisions for clients.</div>
         <div class="project-tags">
           <span class="tag-pill">Python</span>
-          <span class="tag-pill">Dropbox API</span>
-          <span class="tag-pill">Security</span>
+          <span class="tag-pill">Microsoft Graph API</span>
+          <span class="tag-pill">Cost optimisation</span>
         </div>
       </div>
-
       <div class="project">
-        <div class="project-name">Standard Metrics dashboard rebuild</div>
-        <div class="project-desc">Rebuilt a client's Standard Metrics implementation using the platform's API to better fit business needs, with a specific focus on tracking outstanding filings. Turned a generic dashboard into a focused operational tool the team actually relies on.</div>
-        <div class="project-tags">
-          <span class="tag-pill">Standard Metrics API</span>
-          <span class="tag-pill">Python</span>
-          <span class="tag-pill">Internal tooling</span>
-        </div>
-      </div>
-
-      <div class="project">
-        <div class="project-name">Brivo → Slack physical security alerts</div>
-        <div class="project-desc">Integrated Brivo access control with Slack to deliver scheduled alerts on building entry events and alarm status, replacing a daily manual log review with automated, real-time notifications.</div>
-        <div class="project-tags">
-          <span class="tag-pill">Brivo API</span>
-          <span class="tag-pill">Slack webhooks</span>
-          <span class="tag-pill">Automation</span>
-        </div>
-      </div>
-
-      <div class="project">
-        <div class="project-name">Code42 suspicious file sharing reports</div>
-        <div class="project-desc">Built a custom scripted reporting tool that collates Code42 suspicious file sharing activity into a formatted Excel report on demand — one click instead of manually pulling and cross-referencing data from multiple views.</div>
-        <div class="project-tags">
-          <span class="tag-pill">Code42 API</span>
-          <span class="tag-pill">Python</span>
-          <span class="tag-pill">Excel / openpyxl</span>
-        </div>
-      </div>
-
-      <div class="project">
-        <div class="project-name">Meraki → Slack security alerts</div>
-        <div class="project-desc">Custom integration connecting Meraki Security Centre to Slack via webhooks, automating MX security alert notifications and eliminating manual log monitoring entirely.</div>
-        <div class="project-tags">
-          <span class="tag-pill">Meraki API</span>
-          <span class="tag-pill">Slack webhooks</span>
-          <span class="tag-pill">Automation</span>
-        </div>
-      </div>
-
-      <div class="project">
-        <div class="project-name">Okta → Slack user activity alerts</div>
-        <div class="project-desc">Built a custom integration that monitors Okta user activity and pipes targeted alerts into Slack based on configurable trigger conditions — giving the security team real-time visibility of suspicious or notable authentication events.</div>
+        <div class="project-name">Okta ↔ Push Security data sync</div>
+        <div class="project-desc">Custom data sync between Okta and Push Security where no native integration existed, keeping identity and browser-security data aligned without manual exports.</div>
         <div class="project-tags">
           <span class="tag-pill">Okta API</span>
-          <span class="tag-pill">Slack webhooks</span>
-          <span class="tag-pill">Security</span>
+          <span class="tag-pill">Push Security API</span>
+          <span class="tag-pill">Python</span>
         </div>
       </div>
-
-      <div class="project">
-        <div class="project-name">Apple Business Manager → Slack device alerts</div>
-        <div class="project-desc">Integrated Apple Business Manager with Slack to deliver real-time notifications on device registrations, releases, and MDM status changes — replacing the need to manually monitor ABM for fleet activity.</div>
-        <div class="project-tags">
-          <span class="tag-pill">Apple Business Manager API</span>
-          <span class="tag-pill">Slack webhooks</span>
-          <span class="tag-pill">MDM</span>
-        </div>
-      </div>
-
       <div class="project">
         <div class="project-name">KnowBe4 automated compliance reporting</div>
         <div class="project-desc">Built an automated reporting system using the KnowBe4 API that generates formatted compliance reports on a schedule, eliminating the manual data compilation that previously took hours each cycle.</div>
@@ -486,6 +521,20 @@
         </div>
       </div>
 
+    </div>
+    <details class="more">
+      <summary><span class="closed">Show 7 more projects</span><span class="opened">Hide extra projects</span></summary>
+      <div class="projects">
+
+      <div class="project">
+        <div class="project-name">HaloITSM management reporting</div>
+        <div class="project-desc">Rebuilt management ticket reporting for the business using the HaloITSM API, replacing manual reporting with a consistent, repeatable view of service performance.</div>
+        <div class="project-tags">
+          <span class="tag-pill">HaloITSM API</span>
+          <span class="tag-pill">Python</span>
+          <span class="tag-pill">Reporting</span>
+        </div>
+      </div>
       <div class="project">
         <div class="project-name">Push Security — AI platform audit dashboard</div>
         <div class="project-desc">Rebuilt a client's Push Security dashboard using the API to audit AI platforms being accessed across the business — giving security teams a clear, up-to-date view of shadow AI usage and associated risk.</div>
@@ -495,18 +544,54 @@
           <span class="tag-pill">Shadow AI</span>
         </div>
       </div>
-
       <div class="project">
-        <div class="project-name">M365 license auditor</div>
-        <div class="project-desc">Automated tool using Microsoft Graph API to identify unused M365 licenses across the tenant, feeding directly into cost reduction decisions for clients.</div>
+        <div class="project-name">Standard Metrics dashboard rebuild</div>
+        <div class="project-desc">Rebuilt a client's Standard Metrics implementation using the platform's API to better fit business needs, with a specific focus on tracking outstanding filings. Turned a generic dashboard into a focused operational tool the team actually relies on.</div>
         <div class="project-tags">
+          <span class="tag-pill">Standard Metrics API</span>
           <span class="tag-pill">Python</span>
-          <span class="tag-pill">Microsoft Graph API</span>
-          <span class="tag-pill">Cost optimisation</span>
+          <span class="tag-pill">Internal tooling</span>
+        </div>
+      </div>
+      <div class="project">
+        <div class="project-name">Code42 suspicious file sharing reports</div>
+        <div class="project-desc">Built a custom scripted reporting tool that collates Code42 suspicious file sharing activity into a formatted Excel report on demand — one click instead of manually pulling and cross-referencing data from multiple views.</div>
+        <div class="project-tags">
+          <span class="tag-pill">Code42 API</span>
+          <span class="tag-pill">Python</span>
+          <span class="tag-pill">Excel / openpyxl</span>
+        </div>
+      </div>
+      <div class="project">
+        <div class="project-name">Meraki → Slack security alerts</div>
+        <div class="project-desc">Custom integration connecting Meraki Security Centre to Slack via webhooks, automating MX security alert notifications and eliminating manual log monitoring entirely.</div>
+        <div class="project-tags">
+          <span class="tag-pill">Meraki API</span>
+          <span class="tag-pill">Slack webhooks</span>
+          <span class="tag-pill">Automation</span>
+        </div>
+      </div>
+      <div class="project">
+        <div class="project-name">Apple Business Manager → Slack device alerts</div>
+        <div class="project-desc">Integrated Apple Business Manager with Slack to deliver real-time notifications on device registrations, releases, and MDM status changes — replacing the need to manually monitor ABM for fleet activity.</div>
+        <div class="project-tags">
+          <span class="tag-pill">Apple Business Manager API</span>
+          <span class="tag-pill">Slack webhooks</span>
+          <span class="tag-pill">MDM</span>
+        </div>
+      </div>
+      <div class="project">
+        <div class="project-name">Politburo Council</div>
+        <div class="project-desc">A Claude Code skill that adds eight historical Soviet-era leader personas — Lenin, Stalin, Khrushchev, Brezhnev, Andropov, Chernenko, Gorbachev, and wildcard Yeltsin — for reviewing work. Run one persona or the full council to surface genuine disagreement between distinct risk and change philosophies, on code, writing, strategy, or planning.</div>
+        <div class="project-tags">
+          <span class="tag-pill">Claude Code</span>
+          <span class="tag-pill">AI Skill</span>
+          <span class="tag-pill"><a href="https://github.com/CallumReilly-Work/politburo-council" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">GitHub ↗</a></span>
         </div>
       </div>
 
-    </div>
+      </div>
+    </details>
   </section>
 
   <section id="contact">
@@ -515,6 +600,10 @@
       <div class="contact-row">
         <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
         <a href="mailto:callum@callum-reilly.co.uk">callum@callum-reilly.co.uk</a>
+      </div>
+      <div class="contact-row">
+        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+        <a href="tel:+447494879937">+44 (0)7494 879937</a>
       </div>
       <div class="contact-row">
         <svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
