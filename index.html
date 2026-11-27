@@ -35,6 +35,7 @@ body{margin:0;background:#FAFAF8}
 a{color:#1E6B4E}a:hover{color:#14523B}
 </style>
 <style>html{scroll-behavior:smooth}@media print{@page{size:A4;margin:0}}</style>
+<style>.cert-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.cert-cap{display:none}@media (max-width:760px){.cert-grid{grid-template-columns:1fr}.cert-head{display:none}.cert-empty{display:none}.cert-cap{display:block}}</style>
 </head>
 <body>
 <div style="font-family: 'DM Sans', system-ui, sans-serif; color: #1C1917; background: #FAFAF8; font-size: 17px; line-height: 1.7; letter-spacing: 0.01em">
@@ -93,100 +94,87 @@ Open to opportunities
 
 <!-- Certifications -->
 <section id="certs" style="max-width: 1120px; margin: 0 auto; padding: 88px 24px 0">
-<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px; margin-bottom: 32px">
-<div>
 <h2 style="margin: 0 0 8px; font-family: 'Bricolage Grotesque', 'DM Sans', sans-serif; font-size: 34px; font-weight: 600">Certifications</h2>
-<p style="margin: 0; color: #57534E; font-size: 17px">18 active Microsoft certifications, laid out like Microsoft's certification poster, plus 4 from other vendors.</p>
+<p style="margin: 0 0 28px; color: #57534E; font-size: 17px">18 active Microsoft certifications, plus 4 from other vendors.</p>
+<div class="cert-grid cert-head">
+<div style="display: flex; align-items: center; gap: 10px; padding: 0 4px"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1E6B4E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"></path></svg><h3 style="margin: 0; font-size: 19px; font-weight: 600">Security <span style="color: #57534E; font-weight: 500">· 8</span></h3></div>
+<div style="display: flex; align-items: center; gap: 10px; padding: 0 4px"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1E6B4E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="1.5"></rect><rect x="13" y="3" width="8" height="8" rx="1.5"></rect><rect x="3" y="13" width="8" height="8" rx="1.5"></rect><rect x="13" y="13" width="8" height="8" rx="1.5"></rect></svg><h3 style="margin: 0; font-size: 19px; font-weight: 600">AI Business Solutions <span style="color: #57534E; font-weight: 500">· 7</span></h3></div>
+<div style="display: flex; align-items: center; gap: 10px; padding: 0 4px"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1E6B4E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18h10a4 4 0 0 0 .5-7.97A6 6 0 0 0 6 9.5 4.25 4.25 0 0 0 7 18z"></path></svg><h3 style="margin: 0; font-size: 19px; font-weight: 600">Cloud &amp; AI Platforms <span style="color: #57534E; font-weight: 500">· 3</span></h3></div>
 </div>
-</div>
-
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; align-items: start">
-
-<!-- Security column -->
-<div style="background: #FFFFFF; border: 1px solid #E7E5E4; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 22px">
-<div style="display: flex; align-items: center; gap: 12px">
-<svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1E6B4E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"></path></svg>
-<h3 style="margin: 0; font-size: 20px; font-weight: 600">Security <span style="color: #57534E; font-weight: 500">· 8</span></h3>
-</div>
-<div>
-<div style="display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #57534E"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #1C1917"></span>Expert</div>
-<ul style="margin: 6px 0 0; padding: 0; list-style: none; font-size: 16px">
-<li style="display: grid; grid-template-columns: 76px minmax(0, 1fr); column-gap: 12px; padding: 5px 0"><strong style="white-space: nowrap; font-variant-numeric: tabular-nums">SC-100</strong><span style="color: #44403C">Cybersecurity Architect</span></li>
+<div style="display: flex; align-items: center; gap: 8px; margin: 24px 0 10px; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #57534E"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #1C1917"></span>Expert</div>
+<div class="cert-grid">
+<div style="background: #FFFFFF; border: 1px solid #E7E5E4; border-radius: 12px; padding: 16px 20px">
+<div class="cert-cap" style="font-size: 13px; font-weight: 600; color: #57534E; margin-bottom: 6px">Security</div>
+<ul style="margin: 0; padding: 0; list-style: none; font-size: 16px">
+<li style="display: grid; grid-template-columns: 76px minmax(0, 1fr); column-gap: 12px; padding: 4px 0"><strong style="white-space: nowrap; font-variant-numeric: tabular-nums">SC-100</strong><span style="color: #44403C">Cybersecurity Architect</span></li>
 </ul>
 </div>
-<div>
-<div style="display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #57534E"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #1E6B4E"></span>Associate</div>
-<ul style="margin: 6px 0 0; padding: 0; list-style: none; font-size: 16px">
-<li style="display: grid; grid-template-columns: 76px minmax(0, 1fr); column-gap: 12px; padding: 5px 0"><strong style="white-space: nowrap; font-variant-numeric: tabular-nums">SC-500</strong><span style="color: #44403C">Cloud &amp; AI Security Engineer</span></li>
-<li style="display: grid; grid-template-columns: 76px minmax(0, 1fr); column-gap: 12px; padding: 5px 0"><strong style="white-space: nowrap; font-variant-numeric: tabular-nums">AZ-500</strong><span style="color: #44403C">Azure Security Engineer</span></li>
-<li style="display: grid; grid-template-columns: 76px minmax(0, 1fr); column-gap: 12px; padding: 5px 0"><strong style="white-space: nowrap; font-variant-numeric: tabular-nums">SC-200</strong><span style="color: #44403C">Security Operations Analyst</span></li>
-<li style="display: grid; grid-template-columns: 76px minmax(0, 1fr); column-gap: 12px; padding: 5px 0"><strong style="white-space: nowrap; font-variant-numeric: tabular-nums">SC-300</strong><span style="color: #44403C">Identity &amp; Access Administrator</span></li>
-<li style="display: grid; grid-template-columns: 76px minmax(0, 1fr); column-gap: 12px; padding: 5px 0"><strong style="white-space: nowrap; font-variant-numeric: tabular-nums">SC-401</strong><span style="color: #44403C">Information Security Administrator</span></li>
+<div style="background: #FFFFFF; border: 1px solid #E7E5E4; border-radius: 12px; padding: 16px 20px">
+<div class="cert-cap" style="font-size: 13px; font-weight: 600; color: #57534E; margin-bottom: 6px">AI Business Solutions</div>
+<ul style="margin: 0; padding: 0; list-style: none; font-size: 16px">
+<li style="display: grid; grid-template-columns: 76px minmax(0, 1fr); column-gap: 12px; padding: 4px 0"><strong style="white-space: nowrap; font-variant-numeric: tabular-nums">MS-102</strong><span style="color: #44403C">Microsoft 365 Administrator</span></li>
 </ul>
 </div>
-<div>
-<div style="display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #57534E"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #A8A29E"></span>Business &amp; Fundamentals</div>
-<ul style="margin: 6px 0 0; padding: 0; list-style: none; font-size: 16px">
-<li style="display: grid; grid-template-columns: 76px minmax(0, 1fr); column-gap: 12px; padding: 5px 0"><strong style="white-space: nowrap; font-variant-numeric: tabular-nums">SC-900</strong><span style="color: #44403C">Security, Compliance &amp; Identity</span></li>
-<li style="display: grid; grid-template-columns: 76px minmax(0, 1fr); column-gap: 12px; padding: 5px 0"><strong style="white-space: nowrap; font-variant-numeric: tabular-nums"></strong><span style="color: #44403C">Cybersecurity Business Professional <span style="color: #78716C">(beta)</span></span></li>
+<div class="cert-empty" style="background: #FFFFFF; border: 1px solid #E7E5E4; border-radius: 12px; padding: 16px 20px">
+<div class="cert-cap" style="font-size: 13px; font-weight: 600; color: #57534E; margin-bottom: 6px">Cloud &amp; AI Platforms</div>
+<p style="margin: 0; color: #78716C; font-size: 16px">—</p>
+</div>
+</div>
+<div style="display: flex; align-items: center; gap: 8px; margin: 24px 0 10px; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #57534E"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #1E6B4E"></span>Associate</div>
+<div class="cert-grid">
+<div style="background: #FFFFFF; border: 1px solid #E7E5E4; border-radius: 12px; padding: 16px 20px">
+<div class="cert-cap" style="font-size: 13px; font-weight: 600; color: #57534E; margin-bottom: 6px">Security</div>
+<ul style="margin: 0; padding: 0; list-style: none; font-size: 16px">
+<li style="display: grid; grid-template-columns: 76px minmax(0, 1fr); column-gap: 12px; padding: 4px 0"><strong style="white-space: nowrap; font-variant-numeric: tabular-nums">SC-500</strong><span style="color: #44403C">Cloud &amp; AI Security Engineer</span></li>
+<li style="display: grid; grid-template-columns: 76px minmax(0, 1fr); column-gap: 12px; padding: 4px 0"><strong style="white-space: nowrap; font-variant-numeric: tabular-nums">AZ-500</strong><span style="color: #44403C">Azure Security Engineer</span></li>
+<li style="display: grid; grid-template-columns: 76px minmax(0, 1fr); column-gap: 12px; padding: 4px 0"><strong style="white-space: nowrap; font-variant-numeric: tabular-nums">SC-200</strong><span style="color: #44403C">Security Operations Analyst</span></li>
+<li style="display: grid; grid-template-columns: 76px minmax(0, 1fr); column-gap: 12px; padding: 4px 0"><strong style="white-space: nowrap; font-variant-numeric: tabular-nums">SC-300</strong><span style="color: #44403C">Identity &amp; Access Administrator</span></li>
+<li style="display: grid; grid-template-columns: 76px minmax(0, 1fr); column-gap: 12px; padding: 4px 0"><strong style="white-space: nowrap; font-variant-numeric: tabular-nums">SC-401</strong><span style="color: #44403C">Information Security Administrator</span></li>
 </ul>
 </div>
-</div>
-
-<!-- AI Business Solutions column -->
-<div style="background: #FFFFFF; border: 1px solid #E7E5E4; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 22px">
-<div style="display: flex; align-items: center; gap: 12px">
-<svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1E6B4E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="1.5"></rect><rect x="13" y="3" width="8" height="8" rx="1.5"></rect><rect x="3" y="13" width="8" height="8" rx="1.5"></rect><rect x="13" y="13" width="8" height="8" rx="1.5"></rect></svg>
-<h3 style="margin: 0; font-size: 20px; font-weight: 600">AI Business Solutions <span style="color: #57534E; font-weight: 500">· 7</span></h3>
-</div>
-<div>
-<div style="display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #57534E"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #1C1917"></span>Expert</div>
-<ul style="margin: 6px 0 0; padding: 0; list-style: none; font-size: 16px">
-<li style="display: grid; grid-template-columns: 76px minmax(0, 1fr); column-gap: 12px; padding: 5px 0"><strong style="white-space: nowrap; font-variant-numeric: tabular-nums">MS-102</strong><span style="color: #44403C">Microsoft 365 Administrator</span></li>
+<div style="background: #FFFFFF; border: 1px solid #E7E5E4; border-radius: 12px; padding: 16px 20px">
+<div class="cert-cap" style="font-size: 13px; font-weight: 600; color: #57534E; margin-bottom: 6px">AI Business Solutions</div>
+<ul style="margin: 0; padding: 0; list-style: none; font-size: 16px">
+<li style="display: grid; grid-template-columns: 76px minmax(0, 1fr); column-gap: 12px; padding: 4px 0"><strong style="white-space: nowrap; font-variant-numeric: tabular-nums">AB-650</strong><span style="color: #44403C">Microsoft 365 &amp; AI Services Administrator</span></li>
+<li style="display: grid; grid-template-columns: 76px minmax(0, 1fr); column-gap: 12px; padding: 4px 0"><strong style="white-space: nowrap; font-variant-numeric: tabular-nums">MD-102</strong><span style="color: #44403C">Endpoint Administrator</span></li>
+<li style="display: grid; grid-template-columns: 76px minmax(0, 1fr); column-gap: 12px; padding: 4px 0"><strong style="white-space: nowrap; font-variant-numeric: tabular-nums">MS-700</strong><span style="color: #44403C">Teams Administrator</span></li>
 </ul>
 </div>
-<div>
-<div style="display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #57534E"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #1E6B4E"></span>Associate</div>
-<ul style="margin: 6px 0 0; padding: 0; list-style: none; font-size: 16px">
-<li style="display: grid; grid-template-columns: 76px minmax(0, 1fr); column-gap: 12px; padding: 5px 0"><strong style="white-space: nowrap; font-variant-numeric: tabular-nums">AB-650</strong><span style="color: #44403C">Microsoft 365 &amp; AI Services Administrator</span></li>
-<li style="display: grid; grid-template-columns: 76px minmax(0, 1fr); column-gap: 12px; padding: 5px 0"><strong style="white-space: nowrap; font-variant-numeric: tabular-nums">MD-102</strong><span style="color: #44403C">Endpoint Administrator</span></li>
-<li style="display: grid; grid-template-columns: 76px minmax(0, 1fr); column-gap: 12px; padding: 5px 0"><strong style="white-space: nowrap; font-variant-numeric: tabular-nums">MS-700</strong><span style="color: #44403C">Teams Administrator</span></li>
-</ul>
-</div>
-<div>
-<div style="display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #57534E"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #A8A29E"></span>Business &amp; Fundamentals</div>
-<ul style="margin: 6px 0 0; padding: 0; list-style: none; font-size: 16px">
-<li style="display: grid; grid-template-columns: 76px minmax(0, 1fr); column-gap: 12px; padding: 5px 0"><strong style="white-space: nowrap; font-variant-numeric: tabular-nums">AB-731</strong><span style="color: #44403C">AI Transformation Leader</span></li>
-<li style="display: grid; grid-template-columns: 76px minmax(0, 1fr); column-gap: 12px; padding: 5px 0"><strong style="white-space: nowrap; font-variant-numeric: tabular-nums">AB-900</strong><span style="color: #44403C">Copilot &amp; Agent Administration</span></li>
-<li style="display: grid; grid-template-columns: 76px minmax(0, 1fr); column-gap: 12px; padding: 5px 0"><strong style="white-space: nowrap; font-variant-numeric: tabular-nums">MS-900</strong><span style="color: #44403C">Microsoft 365</span></li>
+<div style="background: #FFFFFF; border: 1px solid #E7E5E4; border-radius: 12px; padding: 16px 20px">
+<div class="cert-cap" style="font-size: 13px; font-weight: 600; color: #57534E; margin-bottom: 6px">Cloud &amp; AI Platforms</div>
+<ul style="margin: 0; padding: 0; list-style: none; font-size: 16px">
+<li style="display: grid; grid-template-columns: 76px minmax(0, 1fr); column-gap: 12px; padding: 4px 0"><strong style="white-space: nowrap; font-variant-numeric: tabular-nums">AZ-104</strong><span style="color: #44403C">Azure Administrator</span></li>
 </ul>
 </div>
 </div>
-
-<!-- Cloud & AI Platforms column -->
-<div style="background: #FFFFFF; border: 1px solid #E7E5E4; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 22px">
-<div style="display: flex; align-items: center; gap: 12px">
-<svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1E6B4E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18h10a4 4 0 0 0 .5-7.97A6 6 0 0 0 6 9.5 4.25 4.25 0 0 0 7 18z"></path></svg>
-<h3 style="margin: 0; font-size: 20px; font-weight: 600">Cloud &amp; AI Platforms <span style="color: #57534E; font-weight: 500">· 3</span></h3>
-</div>
-<div>
-<div style="display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #57534E"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #1E6B4E"></span>Associate</div>
-<ul style="margin: 6px 0 0; padding: 0; list-style: none; font-size: 16px">
-<li style="display: grid; grid-template-columns: 76px minmax(0, 1fr); column-gap: 12px; padding: 5px 0"><strong style="white-space: nowrap; font-variant-numeric: tabular-nums">AZ-104</strong><span style="color: #44403C">Azure Administrator</span></li>
+<div style="display: flex; align-items: center; gap: 8px; margin: 24px 0 10px; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #57534E"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #A8A29E"></span>Business &amp; Fundamentals</div>
+<div class="cert-grid">
+<div style="background: #FFFFFF; border: 1px solid #E7E5E4; border-radius: 12px; padding: 16px 20px">
+<div class="cert-cap" style="font-size: 13px; font-weight: 600; color: #57534E; margin-bottom: 6px">Security</div>
+<ul style="margin: 0; padding: 0; list-style: none; font-size: 16px">
+<li style="display: grid; grid-template-columns: 76px minmax(0, 1fr); column-gap: 12px; padding: 4px 0"><strong style="white-space: nowrap; font-variant-numeric: tabular-nums">SC-900</strong><span style="color: #44403C">Security, Compliance &amp; Identity</span></li>
+<li style="display: grid; grid-template-columns: 76px minmax(0, 1fr); column-gap: 12px; padding: 4px 0"><strong style="white-space: nowrap; font-variant-numeric: tabular-nums"></strong><span style="color: #44403C">Cybersecurity Business Professional <span style="color: #78716C">(beta)</span></span></li>
 </ul>
 </div>
-<div>
-<div style="display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #57534E"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #A8A29E"></span>Fundamentals</div>
-<ul style="margin: 6px 0 0; padding: 0; list-style: none; font-size: 16px">
-<li style="display: grid; grid-template-columns: 76px minmax(0, 1fr); column-gap: 12px; padding: 5px 0"><strong style="white-space: nowrap; font-variant-numeric: tabular-nums">AZ-900</strong><span style="color: #44403C">Azure</span></li>
-<li style="display: grid; grid-template-columns: 76px minmax(0, 1fr); column-gap: 12px; padding: 5px 0"><strong style="white-space: nowrap; font-variant-numeric: tabular-nums">DP-900</strong><span style="color: #44403C">Azure Data</span></li>
+<div style="background: #FFFFFF; border: 1px solid #E7E5E4; border-radius: 12px; padding: 16px 20px">
+<div class="cert-cap" style="font-size: 13px; font-weight: 600; color: #57534E; margin-bottom: 6px">AI Business Solutions</div>
+<ul style="margin: 0; padding: 0; list-style: none; font-size: 16px">
+<li style="display: grid; grid-template-columns: 76px minmax(0, 1fr); column-gap: 12px; padding: 4px 0"><strong style="white-space: nowrap; font-variant-numeric: tabular-nums">AB-731</strong><span style="color: #44403C">AI Transformation Leader</span></li>
+<li style="display: grid; grid-template-columns: 76px minmax(0, 1fr); column-gap: 12px; padding: 4px 0"><strong style="white-space: nowrap; font-variant-numeric: tabular-nums">AB-900</strong><span style="color: #44403C">Copilot &amp; Agent Administration</span></li>
+<li style="display: grid; grid-template-columns: 76px minmax(0, 1fr); column-gap: 12px; padding: 4px 0"><strong style="white-space: nowrap; font-variant-numeric: tabular-nums">MS-900</strong><span style="color: #44403C">Microsoft 365</span></li>
 </ul>
 </div>
+<div style="background: #FFFFFF; border: 1px solid #E7E5E4; border-radius: 12px; padding: 16px 20px">
+<div class="cert-cap" style="font-size: 13px; font-weight: 600; color: #57534E; margin-bottom: 6px">Cloud &amp; AI Platforms</div>
+<ul style="margin: 0; padding: 0; list-style: none; font-size: 16px">
+<li style="display: grid; grid-template-columns: 76px minmax(0, 1fr); column-gap: 12px; padding: 4px 0"><strong style="white-space: nowrap; font-variant-numeric: tabular-nums">AZ-900</strong><span style="color: #44403C">Azure</span></li>
+<li style="display: grid; grid-template-columns: 76px minmax(0, 1fr); column-gap: 12px; padding: 4px 0"><strong style="white-space: nowrap; font-variant-numeric: tabular-nums">DP-900</strong><span style="color: #44403C">Azure Data</span></li>
+</ul>
 </div>
 </div>
 
 <!-- Other vendors -->
-<h3 style="margin: 32px 0 12px; font-size: 14px; color: #57534E; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em">Other vendors · 4</h3>
+<h3 style="margin: 36px 0 12px; font-size: 14px; color: #57534E; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em">Other vendors · 4</h3>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1px; background: #E7E5E4; border: 1px solid #E7E5E4; border-radius: 16px; overflow: hidden">
 <div style="background: #FFFFFF; padding: 18px 22px"><div style="font-size: 13px; color: #57534E">CompTIA</div><div style="font-weight: 600; font-size: 17px">Security+</div></div>
 <div style="background: #FFFFFF; padding: 18px 22px"><div style="font-size: 13px; color: #57534E">Google</div><div style="font-weight: 600; font-size: 17px">Associate Workspace Administrator</div></div>
