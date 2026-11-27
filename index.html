@@ -1,635 +1,342 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Callum Reilly — Senior Technical Engineer specialising in Microsoft 365 security and identity. Conditional Access, Intune, Defender and automation across financial services, venture capital and critical national infrastructure. Open to new opportunities." />
-  <title>Callum Reilly — Senior Technical Engineer | M365 Security &amp; Identity</title>
-  <link rel="canonical" href="https://www.callum-reilly.co.uk/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Callum Reilly — Senior Technical Engineer | M365 Security &amp; Identity" />
-  <meta property="og:description" content="Securing Microsoft 365 and identity: Conditional Access, Intune, Defender and automation. 3rd-line escalation across financial services, venture capital and critical national infrastructure." />
-  <meta property="og:url" content="https://www.callum-reilly.co.uk/" />
-  <meta property="og:image" content="https://www.callum-reilly.co.uk/Picture.jpg" />
-  <meta name="twitter:card" content="summary" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Callum Reilly",
-    "jobTitle": "Senior Technical Engineer",
-    "description": "Senior engineer securing Microsoft 365 and identity.",
-    "url": "https://www.callum-reilly.co.uk/",
-    "email": "mailto:callum@callum-reilly.co.uk",
-    "image": "https://www.callum-reilly.co.uk/Picture.jpg",
-    "address": { "@type": "PostalAddress", "addressLocality": "London", "addressCountry": "GB" },
-    "alumniOf": "Birmingham City University",
-    "sameAs": ["https://www.linkedin.com/in/callum-reilly-", "https://github.com/CallumReilly-Work"],
-    "knowsAbout": ["Microsoft 365", "Entra ID", "Conditional Access", "Intune", "Microsoft Defender", "Microsoft Purview", "KQL", "Okta", "PowerShell", "Python", "Microsoft Graph API"]
-  }
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg: #fafaf8;
-      --text: #1c1c1a;
-      --muted: #737370;
-      --hint: #adadaa;
-      --border: rgba(0,0,0,0.07);
-      --accent: #1a6650;
-      --accent-bg: #edf7f3;
-      --accent-text: #1a6650;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      font-size: 15px;
-      line-height: 1.7;
-    }
-
-    .wrap {
-      max-width: 640px;
-      margin: 0 auto;
-      padding: 0 1.75rem;
-    }
-
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(250, 250, 248, 0.9);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      padding: 1.25rem 0;
-      border-bottom: 0.5px solid var(--border);
-    }
-    nav .wrap {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-    }
-    .nav-name { font-size: 18px; font-weight: 500; color: var(--text); white-space: nowrap; }
-    .nav-links { display: flex; gap: 1.25rem; list-style: none; }
-    .nav-links a { font-size: 13px; color: var(--muted); text-decoration: none; white-space: nowrap; }
-    .nav-links a:hover { color: var(--text); }
-
-    .hero { padding: 4.5rem 0 3.5rem; display: flex; align-items: flex-start; gap: 3rem; }
-    .hero-content { flex: 1; min-width: 0; }
-    .hero-image {
-      flex-shrink: 0;
-      width: 160px;
-      height: 160px;
-      border-radius: 12px;
-      overflow: hidden;
-      border: 0.5px solid var(--border);
-    }
-    .hero-image img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      padding: 4px 11px;
-      border-radius: 20px;
-      background: var(--accent-bg);
-      color: var(--accent-text);
-      margin-bottom: 1.5rem;
-    }
-    .tag::before {
-      content: '';
-      width: 5px; height: 5px;
-      border-radius: 50%;
-      background: var(--accent);
-      animation: blink 2.5s ease-in-out infinite;
-    }
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .tag::before { animation: none; }
-    }
-    h1 {
-      font-size: clamp(34px, 5.5vw, 48px);
-      font-weight: 300;
-      line-height: 1.1;
-      letter-spacing: -0.025em;
-      margin-bottom: 1.25rem;
-    }
-    h1 strong { font-weight: 500; }
-    .hero-availability {
-      font-size: 13px;
-      color: var(--hint);
-      margin-bottom: 0.75rem !important;
-    }
-    .hero p {
-      font-size: 15px;
-      color: var(--muted);
-      line-height: 1.8;
-      max-width: 520px;
-      margin-bottom: 1.75rem;
-    }
-    .hero-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-family: inherit;
-      font-size: 13px;
-      font-weight: 500;
-      padding: 8px 16px;
-      border-radius: 6px;
-      text-decoration: none;
-      transition: background 0.15s, border-color 0.15s;
-      cursor: pointer;
-    }
-    .btn-primary {
-      background: var(--accent);
-      color: #fff;
-      border: 1px solid var(--accent);
-    }
-    .btn-primary:hover { background: #155540; border-color: #155540; }
-    .btn-secondary {
-      background: transparent;
-      color: var(--text);
-      border: 0.5px solid rgba(0,0,0,0.18);
-    }
-    .btn-secondary:hover { background: rgba(0,0,0,0.04); }
-
-    section {
-      padding: 3rem 0;
-      border-top: 0.5px solid var(--border);
-    }
-
-    .label {
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--hint);
-      margin-bottom: 1.5rem;
-    }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      border: 0.5px solid var(--border);
-      border-radius: 10px;
-      overflow: hidden;
-    }
-    .skill-card {
-      padding: 1.125rem 1.25rem;
-      border-right: 0.5px solid var(--border);
-      border-bottom: 0.5px solid var(--border);
-    }
-    .skill-card:nth-child(2n) { border-right: none; }
-    @media (min-width: 521px) {
-      .skill-card:nth-last-child(-n+2) { border-bottom: none; }
-    }
-    .skill-title { font-size: 12px; font-weight: 500; margin-bottom: 4px; }
-    .skill-items { font-size: 12px; color: var(--muted); line-height: 1.6; }
-
-    .projects { border: 0.5px solid var(--border); border-radius: 10px; overflow: hidden; }
-    .project {
-      padding: 1.25rem 1.5rem;
-      border-bottom: 0.5px solid var(--border);
-      transition: background 0.12s;
-    }
-    .project:last-child { border-bottom: none; }
-    .project:hover { background: rgba(0,0,0,0.02); }
-    .project-name { font-size: 14px; font-weight: 500; margin-bottom: 5px; }
-    .project-desc { font-size: 13px; color: var(--muted); line-height: 1.65; }
-    .project-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
-    .tag-pill {
-      font-size: 10px;
-      padding: 3px 8px;
-      border-radius: 4px;
-      border: 0.5px solid var(--border);
-      color: var(--hint);
-    }
-
-    .certs { border: 0.5px solid var(--border); border-radius: 10px; overflow: hidden; }
-    .cert-group { border-bottom: 0.5px solid var(--border); padding: 1.125rem 1.25rem; }
-    .cert-group:last-child { border-bottom: none; }
-    .cert-group-name { font-size: 10px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--hint); margin-bottom: 0.75rem; }
-    .cert-list { display: flex; flex-direction: column; gap: 4px; }
-    .cert-item { font-size: 12px; color: var(--muted); }
-    .cert-code { font-size: 10px; color: var(--hint); margin-right: 6px; }
-
-    .contact-list { border: 0.5px solid var(--border); border-radius: 10px; overflow: hidden; }
-    .contact-row {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 1rem 1.25rem;
-      border-bottom: 0.5px solid var(--border);
-    }
-    .contact-row:last-child { border-bottom: none; }
-    .contact-row svg { width: 15px; height: 15px; color: var(--hint); flex-shrink: 0; }
-    .contact-row a { font-size: 13px; color: var(--text); text-decoration: none; }
-    .contact-row a:hover { color: var(--accent); }
-    .contact-row span { font-size: 13px; color: var(--muted); }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      border: 0.5px solid var(--border);
-      border-radius: 10px;
-      overflow: hidden;
-      margin-bottom: 3rem;
-    }
-    .stat { padding: 1rem 1.1rem; border-right: 0.5px solid var(--border); }
-    .stat:last-child { border-right: none; }
-    .stat-num { font-size: 22px; font-weight: 500; letter-spacing: -0.02em; color: var(--accent); line-height: 1.2; }
-    .stat-label { font-size: 11px; color: var(--muted); line-height: 1.4; margin-top: 2px; }
-
-    .job-meta { font-size: 12px; color: var(--hint); margin-bottom: 8px; }
-    .job-list { list-style: none; display: flex; flex-direction: column; gap: 5px; }
-    .job-list li { font-size: 13px; color: var(--muted); line-height: 1.6; padding-left: 14px; position: relative; }
-    .job-list li::before { content: '–'; position: absolute; left: 0; color: var(--hint); }
-    .job-list b { font-weight: 500; color: var(--text); }
-    .role-sub { font-size: 13px; font-weight: 500; margin: 1rem 0 2px; }
-
-    .more { margin-top: 0.75rem; }
-    .more summary {
-      cursor: pointer;
-      list-style: none;
-      text-align: center;
-      padding: 0.85rem 1.25rem;
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--accent);
-      border: 0.5px solid var(--border);
-      border-radius: 10px;
-    }
-    .more summary::-webkit-details-marker { display: none; }
-    .more summary:hover { background: var(--accent-bg); }
-    .more[open] summary { margin-bottom: 0.75rem; }
-    .more[open] summary .closed, .more:not([open]) summary .opened { display: none; }
-
-    footer {
-      border-top: 0.5px solid var(--border);
-      padding: 2rem 0;
-      text-align: center;
-    }
-    footer p { font-size: 11px; color: var(--hint); }
-
-    @media (max-width: 520px) {
-      .wrap { padding: 0 1.25rem; }
-      .nav-links { gap: 1rem; }
-      .nav-links a { font-size: 12px; }
-      .hero { padding: 3rem 0 2.5rem; flex-direction: column; gap: 1.75rem; }
-      .hero-image { width: 100%; height: 280px; border-radius: 10px; }
-      .skills-grid { grid-template-columns: 1fr; }
-      .stats { grid-template-columns: 1fr 1fr; }
-      .stat:nth-child(2n) { border-right: none; }
-      .stat:nth-child(-n+2) { border-bottom: 0.5px solid var(--border); }
-      .skill-card { border-right: none; }
-      .skill-card:last-child { border-bottom: none; }
-      .project { padding: 1.125rem 1.25rem; }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Callum Reilly — M365 Security & Identity Contractor, London</title>
+<meta name="description" content="London-based Microsoft 365 security and identity contractor: Entra ID, Conditional Access, Intune and Defender, plus automation that keeps estates auditable. SC-100 and MS-102 Expert. Outside IR35.">
+<link rel="canonical" href="https://www.callum-reilly.co.uk/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Callum Reilly — M365 Security &amp; Identity Contractor">
+<meta property="og:description" content="Contract Microsoft 365 security and identity engineer in London: Conditional Access, Intune, Defender and automation. Outside IR35.">
+<meta property="og:url" content="https://www.callum-reilly.co.uk/">
+<meta property="og:image" content="https://www.callum-reilly.co.uk/Picture.jpg">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Callum Reilly",
+  "jobTitle": "Microsoft 365 Security & Identity Contractor",
+  "description": "Contract engineer securing Microsoft 365 and identity.",
+  "url": "https://www.callum-reilly.co.uk/",
+  "email": "mailto:callum@callum-reilly.co.uk",
+  "image": "https://www.callum-reilly.co.uk/Picture.jpg",
+  "address": { "@type": "PostalAddress", "addressLocality": "London", "addressCountry": "GB" },
+  "alumniOf": "Birmingham City University",
+  "sameAs": ["https://www.linkedin.com/in/callum-reilly-", "https://github.com/CallumReilly-Work"],
+  "knowsAbout": ["Microsoft 365", "Entra ID", "Conditional Access", "Intune", "Microsoft Defender", "Microsoft Purview", "KQL", "Okta", "PowerShell", "Python", "Microsoft Graph API"]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&amp;family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FAFAF8}
+a{color:#1E6B4E}a:hover{color:#14523B}
+</style>
+<style>html{scroll-behavior:smooth}@media print{@page{size:A4;margin:0}}</style>
 </head>
 <body>
+<div style="font-family: 'DM Sans', system-ui, sans-serif; color: #1C1917; background: #FAFAF8; font-size: 17px; line-height: 1.7; letter-spacing: 0.01em">
 
-<nav>
-  <div class="wrap">
-    <span class="nav-name">Callum Reilly</span>
-    <ul class="nav-links">
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#certs">Certs</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </div>
+<!-- Top bar -->
+<header style="background: #FAFAF8; border-bottom: 1px solid #E7E5E4">
+<div style="max-width: 1120px; margin: 0 auto; padding: 16px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<a href="#top" style="font-family: 'Bricolage Grotesque', 'DM Sans', sans-serif; font-weight: 700; font-size: 20px; color: #1C1917; text-decoration: none">Callum Reilly</a>
+<nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; gap: 24px; font-size: 15px; font-weight: 500">
+<a href="#services" style="color: #44403C; text-decoration: none">Services</a>
+<a href="#work" style="color: #44403C; text-decoration: none">Work</a>
+<a href="#experience" style="color: #44403C; text-decoration: none">Experience</a>
+<a href="#certs" style="color: #44403C; text-decoration: none">Certifications</a>
+<a href="Callum-Reilly-CV.pdf" download style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 8px; background: #1D4ED8; color: #FFFFFF; text-decoration: none; font-weight: 600">Download CV</a>
 </nav>
+</div>
+</header>
 
-<div class="wrap">
+<!-- Hero -->
+<section id="top" style="background: #FAFAF8">
+<div style="max-width: 1120px; margin: 0 auto; padding: 80px 24px 56px; display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start">
+<div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+<div style="display: inline-flex; align-self: flex-start; align-items: center; gap: 10px; padding: 8px 16px; border-radius: 999px; background: #E8F3EE; color: #14523B; font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase">
+<span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #1E6B4E; display: inline-block"></span>
+Available from [START DATE]
+</div>
+<h1 style="margin: 0; font-family: 'Bricolage Grotesque', 'DM Sans', sans-serif; font-size: 62px; line-height: 1.08; letter-spacing: 0; font-weight: 600">M365 Security &amp; Identity Contractor</h1>
+<p style="margin: 0; font-size: 19px; color: #57534E">Contract · Outside IR35 · London / hybrid</p>
+<ul aria-label="Contact" style="margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px 28px; font-size: 17px; font-weight: 500">
+<li><a href="mailto:callum@callum-reilly.co.uk" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; color: #1C1917; text-decoration: none"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1E6B4E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg>callum@callum-reilly.co.uk</a></li>
+<li><a href="tel:+447494879937" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; color: #1C1917; text-decoration: none"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1E6B4E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"></path></svg>+44 (0)7494 879937</a></li>
+<li><a href="https://www.linkedin.com/in/callum-reilly-/" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; color: #1C1917; text-decoration: none"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1E6B4E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"></rect><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"></path></svg>LinkedIn</a></li>
+</ul>
+<p style="margin: 0; font-size: 19px; color: #44403C; max-width: 620px">I lock down Entra ID, Conditional Access, Intune and Defender, and automate the audits that prove it. 7+ years across financial services, venture capital and critical national infrastructure.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; padding-top: 8px">
+<a href="Callum-Reilly-CV.pdf" download style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 24px; border-radius: 10px; background: #1D4ED8; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 17px"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"></path></svg>Download CV (PDF)</a>
+<a href="mailto:callum@callum-reilly.co.uk" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 24px; border-radius: 10px; background: #FFFFFF; border: 1px solid #78716C; color: #1C1917; text-decoration: none; font-weight: 600; font-size: 17px">Email me</a>
+</div>
+</div>
+<div style="flex: 1 1 280px; min-width: 0; display: flex; justify-content: flex-end">
+<img src="Picture.jpg" alt="Callum Reilly at his desk, reviewing code on a monitor" style="width: 100%; max-width: 320px; aspect-ratio: 1 / 1; object-fit: cover; object-position: center 30%; border-radius: 16px; display: block">
+</div>
+</div>
+</section>
 
-  <div class="hero">
-    <div class="hero-content">
-      <div class="tag">Open to opportunities</div>
-      <h1>Senior Technical<br>Engineer</h1>
-      <p class="hero-availability">M365 Security &amp; Identity &nbsp;·&nbsp; London / hybrid &nbsp;·&nbsp; Contract or permanent</p>
-      <p>Senior engineer securing Microsoft 365 and identity. Hands-on with Conditional Access, Intune and Defender, plus automation that keeps estates auditable. 3rd-line escalation point across financial services, venture capital and critical national infrastructure.</p>
-      <div class="hero-actions">
-        <a href="Callum-Reilly-CV.pdf" target="_blank" rel="noopener" class="btn btn-primary">
-          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
-          Download CV (PDF)
-        </a>
-        <a href="mailto:callum@callum-reilly.co.uk?subject=Opportunity%20for%20Callum%20Reilly" class="btn btn-secondary">Email me</a>
-        <a href="https://www.linkedin.com/in/callum-reilly-" target="_blank" rel="noopener" class="btn btn-secondary">LinkedIn</a>
-      </div>
-    </div>
-    <div class="hero-image">
-      <img src="Picture.jpg" alt="Callum Reilly" />
-    </div>
-  </div>
+<!-- At a glance (full-width band) -->
+<section aria-labelledby="glance-h" style="background: #FFFFFF; border-top: 1px solid #E7E5E4; border-bottom: 1px solid #E7E5E4">
+<div style="max-width: 1120px; margin: 0 auto; padding: 40px 24px; display: flex; flex-direction: column; gap: 32px">
+<div style="display: flex; flex-wrap: wrap; gap: 20px 48px">
+<div style="flex: 1 1 160px">
+<h2 id="glance-h" style="margin: 0; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; color: #57534E; font-weight: 600">At a glance</h2>
+</div>
+<dl style="flex: 999 1 640px; min-width: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 24px 32px">
+<div><dt style="color: #57534E; font-size: 14px">Day rate</dt><dd style="margin: 4px 0 0; font-weight: 600; font-size: 18px">£[RATE] / day</dd></div>
+<div><dt style="color: #57534E; font-size: 14px">IR35</dt><dd style="margin: 4px 0 0; font-weight: 600; font-size: 18px">Outside · Ltd co.</dd></div>
+<div><dt style="color: #57534E; font-size: 14px">Location</dt><dd style="margin: 4px 0 0; font-weight: 600; font-size: 18px">London · hybrid</dd></div>
+<div><dt style="color: #57534E; font-size: 14px">Travel</dt><dd style="margin: 4px 0 0; font-weight: 600; font-size: 18px">UK &amp; international</dd></div>
+<div><dt style="color: #57534E; font-size: 14px">Notice</dt><dd style="margin: 4px 0 0; font-weight: 600; font-size: 18px">[NOTICE PERIOD]</dd></div>
+<div><dt style="color: #57534E; font-size: 14px">Clearance</dt><dd style="margin: 4px 0 0; font-weight: 600; font-size: 18px">[BPSS / SC]</dd></div>
+</dl>
+</div>
+<p style="margin: 0; font-size: 16px; color: #44403C">Best fit: <strong style="color: #1C1917">M365 Security Engineer · Identity / Entra ID Engineer · Intune Engineer</strong></p>
+<div aria-label="Key numbers" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px 32px; padding-top: 32px; border-top: 1px solid #E7E5E4">
+<div><div style="font-family: 'Bricolage Grotesque', 'DM Sans', sans-serif; font-size: 44px; line-height: 1.1; font-weight: 600; color: #1D4ED8">7+ yrs</div><div style="color: #57534E; font-size: 15px; margin-top: 4px">in enterprise IT and security</div></div>
+<div><div style="font-family: 'Bricolage Grotesque', 'DM Sans', sans-serif; font-size: 44px; line-height: 1.1; font-weight: 600; color: #1D4ED8">20,000+</div><div style="color: #57534E; font-size: 15px; margin-top: 4px">employees supported at National Grid</div></div>
+<div><div style="font-family: 'Bricolage Grotesque', 'DM Sans', sans-serif; font-size: 44px; line-height: 1.1; font-weight: 600; color: #1D4ED8">22</div><div style="color: #57534E; font-size: 15px; margin-top: 4px">certifications, incl. 2 Microsoft Expert</div></div>
+<div><div style="font-family: 'Bricolage Grotesque', 'DM Sans', sans-serif; font-size: 44px; line-height: 1.1; font-weight: 600; color: #1D4ED8">3rd line</div><div style="color: #57534E; font-size: 15px; margin-top: 4px">escalation across enterprise estates</div></div>
+</div>
+</div>
+</section>
 
-  <div class="stats">
-    <div class="stat"><div class="stat-num">7+ yrs</div><div class="stat-label">in enterprise IT and security</div></div>
-    <div class="stat"><div class="stat-num">20,000+</div><div class="stat-label">employees supported at National Grid</div></div>
-    <div class="stat"><div class="stat-num">12x</div><div class="stat-label">Microsoft Certified (7 security, 5 administration)</div></div>
-    <div class="stat"><div class="stat-num">3rd line</div><div class="stat-label">escalation across enterprise estates</div></div>
-  </div>
+<!-- Services (asymmetric two-column) -->
+<section id="services" style="max-width: 1120px; margin: 0 auto; padding: 104px 24px 0; display: flex; flex-wrap: wrap; gap: 32px 72px">
+<div style="flex: 1 1 260px; min-width: 0">
+<h2 style="margin: 0 0 12px; font-family: 'Bricolage Grotesque', 'DM Sans', sans-serif; font-size: 40px; line-height: 1.15; font-weight: 600">What you can hire me for</h2>
+<p style="margin: 0; color: #57534E; font-size: 17px">Project delivery or BAU cover, scoped to a fixed outcome.</p>
+</div>
+<div style="flex: 999 1 560px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0 48px">
+<div style="padding: 24px 0; border-top: 2px solid #1C1917">
+<div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E6B4E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg><h3 style="margin: 0; font-size: 19px; font-weight: 600">Identity &amp; Conditional Access</h3></div>
+<p style="margin: 0; color: #44403C; font-size: 16px">Entra ID hardening, CA policy design, phishing-resistant MFA (FIDO2), Okta SSO.</p>
+</div>
+<div style="padding: 24px 0; border-top: 2px solid #1C1917">
+<div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E6B4E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M8 20h8M12 16v4"></path></svg><h3 style="margin: 0; font-size: 19px; font-weight: 600">Intune &amp; endpoint</h3></div>
+<p style="margin: 0; color: #44403C; font-size: 16px">Intune onboarding and rollout, compliance baselines, remediations for Windows and macOS (JAMF).</p>
+</div>
+<div style="padding: 24px 0; border-top: 2px solid #1C1917">
+<div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E6B4E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"></path><path d="M9 12l2 2 4-4"></path></svg><h3 style="margin: 0; font-size: 19px; font-weight: 600">Defender, KQL &amp; incident response</h3></div>
+<p style="margin: 0; color: #44403C; font-size: 16px">Threat hunting, CVE remediation, alert triage and Purview breach investigations.</p>
+</div>
+<div style="padding: 24px 0; border-top: 2px solid #1C1917">
+<div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E6B4E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"></path></svg><h3 style="margin: 0; font-size: 19px; font-weight: 600">Audit &amp; automation</h3></div>
+<p style="margin: 0; color: #44403C; font-size: 16px">PowerShell, Python and Graph API tooling: permission audits, licence clean-up, reporting.</p>
+</div>
+</div>
+</section>
 
-  <section id="experience">
-    <p class="label">Experience</p>
-    <div class="projects">
+<!-- Selected work: one featured case, then a list -->
+<section id="work" style="max-width: 1120px; margin: 0 auto; padding: 104px 24px 0">
+<h2 style="margin: 0 0 8px; font-family: 'Bricolage Grotesque', 'DM Sans', sans-serif; font-size: 40px; line-height: 1.15; font-weight: 600">Selected work</h2>
+<p style="margin: 0 0 32px; color: #57534E; font-size: 17px">Problem, what I did, and the result.</p>
 
-      <div class="project">
-        <div class="project-name">Alternit One</div>
-        <div class="job-meta">London &nbsp;·&nbsp; 02/2023 – present</div>
+<article style="display: flex; flex-wrap: wrap; background: #FFFFFF; border: 1px solid #D6D3D1; border-radius: 16px; overflow: hidden">
+<div style="flex: 999 1 520px; min-width: 0; padding: 40px; display: flex; flex-direction: column; gap: 14px">
+<div style="font-size: 14px; font-weight: 600; color: #1E6B4E; text-transform: uppercase; letter-spacing: 0.08em">Featured · Identity · Financial services</div>
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', 'DM Sans', sans-serif; font-size: 30px; line-height: 1.2; font-weight: 600">Phishing-resistant MFA rollout</h3>
+<p style="margin: 0; color: #44403C; font-size: 17px; max-width: 560px">Deployed FIDO2 security keys enforced through Conditional Access, with a new authentication context protecting privileged actions, plus an audit report tracking coverage across the estate.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; padding-top: 4px">
+<span style="padding: 5px 12px; border-radius: 6px; background: #F5F5F4; font-size: 14px; font-weight: 500">Entra ID</span><span style="padding: 5px 12px; border-radius: 6px; background: #F5F5F4; font-size: 14px; font-weight: 500">Conditional Access</span><span style="padding: 5px 12px; border-radius: 6px; background: #F5F5F4; font-size: 14px; font-weight: 500">FIDO2</span><span style="padding: 5px 12px; border-radius: 6px; background: #F5F5F4; font-size: 14px; font-weight: 500">PowerShell</span>
+</div>
+</div>
+<div style="flex: 1 1 300px; min-width: 0; background: #E8F3EE; padding: 40px; display: flex; flex-direction: column; justify-content: center; gap: 8px">
+<div style="font-size: 14px; font-weight: 600; color: #14523B; text-transform: uppercase; letter-spacing: 0.08em">Result</div>
+<div style="font-family: 'Bricolage Grotesque', 'DM Sans', sans-serif; font-size: 28px; line-height: 1.25; font-weight: 600; color: #14523B">[e.g. 100% of admins on phishing-resistant MFA]</div>
+</div>
+</article>
 
-        <div class="role-sub" style="margin-top:0;">Senior Technical Engineer <span style="color:var(--hint);font-weight:400;">· 08/2024 – present</span></div>
-        <ul class="job-list">
-          <li><b>Identity &amp; endpoint:</b> deployed Intune and Conditional Access policies; on-site in the UAE for a week onboarding a client onto Intune.</li>
-          <li><b>Phishing-resistant MFA:</b> implemented FIDO keys with Conditional Access and a new authentication context; built an audit report.</li>
-          <li><b>M365 administration:</b> Exchange, Teams, SharePoint, Defender and Entra ID for global clients, plus dedicated project support for world-leading venture capital clients across Okta, Google Workspace and JAMF.</li>
-          <li><b>Security operations:</b> remediated Defender-flagged CVEs via Intune remediations, ran KQL threat hunts, and led breach investigations with Microsoft Purview auditing.</li>
-          <li><b>Automation &amp; integrations:</b> SharePoint auditing tools, an Okta security platform, a Python and Graph API licence auditor, an Okta and Push Security sync, KnowBe4 reporting, and HaloITSM ticket reporting.</li>
-          <li><b>Escalation:</b> 3rd line escalation point for complex issues across enterprise environments.</li>
-        </ul>
+<ul style="margin: 24px 0 0; padding: 0; list-style: none; border-bottom: 1px solid #D6D3D1">
+<li style="display: flex; flex-wrap: wrap; gap: 8px 40px; padding: 28px 0; border-top: 1px solid #D6D3D1">
+<div style="flex: 1 1 240px; min-width: 0"><div style="font-size: 13px; font-weight: 600; color: #1E6B4E; text-transform: uppercase; letter-spacing: 0.08em">Identity · Venture capital</div><h3 style="margin: 4px 0 0; font-size: 20px; font-weight: 600">Okta security platform</h3></div>
+<p style="flex: 999 1 400px; min-width: 0; margin: 0; color: #44403C; font-size: 16px">Co-built three SSO web apps for IT and the C-suite: a live Dropbox permissions audit, real-time Okta identity alerts to Slack, and a Brivo building-access monitor.</p>
+<p style="flex: 1 1 200px; min-width: 0; margin: 0; font-size: 16px; font-weight: 600">Manual log review replaced with real-time alerting</p>
+</li>
+<li style="display: flex; flex-wrap: wrap; gap: 8px 40px; padding: 28px 0; border-top: 1px solid #D6D3D1">
+<div style="flex: 1 1 240px; min-width: 0"><div style="font-size: 13px; font-weight: 600; color: #1E6B4E; text-transform: uppercase; letter-spacing: 0.08em">Endpoint · UAE, on-site</div><h3 style="margin: 4px 0 0; font-size: 20px; font-weight: 600">Intune onboarding in a week</h3></div>
+<p style="flex: 999 1 400px; min-width: 0; margin: 0; color: #44403C; font-size: 16px">Travelled to the UAE to onboard a client estate onto Intune with Conditional Access, working alongside their staff on-site.</p>
+<p style="flex: 1 1 200px; min-width: 0; margin: 0; font-size: 16px; font-weight: 600">[Devices enrolled / compliance %]</p>
+</li>
+<li style="display: flex; flex-wrap: wrap; gap: 8px 40px; padding: 28px 0; border-top: 1px solid #D6D3D1">
+<div style="flex: 1 1 240px; min-width: 0"><div style="font-size: 13px; font-weight: 600; color: #1E6B4E; text-transform: uppercase; letter-spacing: 0.08em">Automation · Multi-tenant</div><h3 style="margin: 4px 0 0; font-size: 20px; font-weight: 600">SharePoint access auditing</h3></div>
+<p style="flex: 999 1 400px; min-width: 0; margin: 0; color: #44403C; font-size: 16px">Built tooling that finds overprivileged users and orphaned access across many tenants, producing reports clients can act on.</p>
+<p style="flex: 1 1 200px; min-width: 0; margin: 0; font-size: 16px; font-weight: 600">Sample code available on request</p>
+</li>
+<li style="display: flex; flex-wrap: wrap; gap: 8px 40px; padding: 28px 0; border-top: 1px solid #D6D3D1">
+<div style="flex: 1 1 240px; min-width: 0"><div style="font-size: 13px; font-weight: 600; color: #1E6B4E; text-transform: uppercase; letter-spacing: 0.08em">Cost · Automation</div><h3 style="margin: 4px 0 0; font-size: 20px; font-weight: 600">Graph API licence auditor</h3></div>
+<p style="flex: 999 1 400px; min-width: 0; margin: 0; color: #44403C; font-size: 16px">Python tool on Microsoft Graph that finds unused and duplicate M365 licences across client tenants.</p>
+<p style="flex: 1 1 200px; min-width: 0; margin: 0; font-size: 16px; font-weight: 600">[£ saved per year]</p>
+</li>
+<li style="display: flex; flex-wrap: wrap; gap: 8px 40px; padding: 28px 0; border-top: 1px solid #D6D3D1">
+<div style="flex: 1 1 240px; min-width: 0"><div style="font-size: 13px; font-weight: 600; color: #1E6B4E; text-transform: uppercase; letter-spacing: 0.08em">Security ops · Enterprise</div><h3 style="margin: 4px 0 0; font-size: 20px; font-weight: 600">Vulnerability &amp; threat response</h3></div>
+<p style="flex: 999 1 400px; min-width: 0; margin: 0; color: #44403C; font-size: 16px">Fixed Defender-flagged CVEs with Intune remediations, hunted identity threats in KQL and ran breach investigations in Purview.</p>
+<p style="flex: 1 1 200px; min-width: 0; margin: 0; font-size: 16px; font-weight: 600">[Exposure score from X to Y]</p>
+</li>
+</ul>
+</section>
 
-        <div class="role-sub">Technical Engineer <span style="color:var(--hint);font-weight:400;">· 02/2023 – 08/2024 · City of London</span></div>
-        <ul class="job-list">
-          <li><b>24/7 support</b> for global financial services clients, including white-glove C-suite support across London, Europe, USA and UAE.</li>
-          <li><b>Field service:</b> dedicated field service engineer for client sites.</li>
-        </ul>
-      </div>
+<!-- Experience -->
+<section id="experience" style="max-width: 1120px; margin: 0 auto; padding: 80px 24px 0">
+<h2 style="margin: 0 0 32px; font-family: 'Bricolage Grotesque', 'DM Sans', sans-serif; font-size: 34px; letter-spacing: 0">Experience</h2>
+<div style="background: #FFFFFF; border: 1px solid #E7E5E4; border-radius: 12px">
+<div style="display: flex; flex-wrap: wrap; gap: 8px 24px; padding: 24px; border-bottom: 1px solid #E7E5E4">
+<div style="flex: 1 1 180px; color: #57534E; font-size: 15px; font-weight: 500">08/2024 – present</div>
+<div style="flex: 999 1 480px; min-width: 0"><div style="font-weight: 700; font-size: 17px">Senior Technical Engineer · Alternit One</div><div style="color: #44403C; font-size: 15px">3rd-line escalation point for global FS and VC clients. Intune, Conditional Access, FIDO2 MFA, Defender, KQL, Purview, and Python/Graph automation.</div></div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px 24px; padding: 24px; border-bottom: 1px solid #E7E5E4">
+<div style="flex: 1 1 180px; color: #57534E; font-size: 15px; font-weight: 500">01/2023 – 08/2024</div>
+<div style="flex: 999 1 480px; min-width: 0"><div style="font-weight: 700; font-size: 17px">Technical Engineer · Alternit One, City of London</div><div style="color: #44403C; font-size: 15px">24/7 white-glove support for C-suite at financial services firms across London, Europe, USA and UAE. Dedicated field engineer.</div></div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px 24px; padding: 24px">
+<div style="flex: 1 1 180px; color: #57534E; font-size: 15px; font-weight: 500">05/2019 – 01/2023</div>
+<div style="flex: 999 1 480px; min-width: 0"><div style="font-weight: 700; font-size: 17px">Desktop Support Engineer · National Grid (Atos contractor), Warwick</div><div style="color: #44403C; font-size: 15px">Supported 20,000+ users across critical national infrastructure, including energy control centres. Delivered a 7,000+ device Windows 10 rollout and moved the help desk to remote working during COVID-19.</div></div>
+</div>
+</div>
+<p style="margin: 16px 0 0; color: #57534E; font-size: 15px">BSc (Hons) Business Information Technology, First Class · Birmingham City University</p>
+</section>
 
-      <div class="project">
-        <div class="project-name">Desktop Support Engineer — National Grid (Atos contractor)</div>
-        <div class="job-meta">Warwick &nbsp;·&nbsp; 05/2019 – 01/2023</div>
-        <ul class="job-list">
-          <li><b>Scale:</b> supported 20,000+ employees across critical national infrastructure, including UK energy control centres.</li>
-          <li><b>Windows 10 rollout:</b> 7,000+ computers; transitioned the help desk to remote operations during COVID-19.</li>
-        </ul>
-      </div>
+<!-- Certifications -->
+<section id="certs" style="max-width: 1120px; margin: 0 auto; padding: 88px 24px 0">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px; margin-bottom: 32px">
+<div>
+<h2 style="margin: 0 0 8px; font-family: 'Bricolage Grotesque', 'DM Sans', sans-serif; font-size: 34px; font-weight: 600">Certifications</h2>
+<p style="margin: 0; color: #57534E; font-size: 17px">18 active Microsoft certifications, laid out like Microsoft's certification poster, plus 4 from other vendors.</p>
+</div>
+</div>
 
-    </div>
-  </section>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; align-items: start">
 
-  <section id="skills">
-    <p class="label">Skills</p>
-    <div class="skills-grid">
-      <div class="skill-card">
-        <div class="skill-title">Microsoft 365 &amp; identity</div>
-        <div class="skill-items">Entra ID, Conditional Access, Intune (MDM), Defender, Purview, Exchange Online, SharePoint</div>
-      </div>
-      <div class="skill-card">
-        <div class="skill-title">Security operations</div>
-        <div class="skill-items">KQL threat hunting, incident response, vulnerability management, Purview breach investigations</div>
-      </div>
-      <div class="skill-card">
-        <div class="skill-title">Scripting &amp; automation</div>
-        <div class="skill-items">PowerShell, Python, Microsoft Graph API, REST APIs, Claude</div>
-      </div>
-      <div class="skill-card">
-        <div class="skill-title">Identity &amp; platforms</div>
-        <div class="skill-items">Okta (SSO), IAM, Google Workspace, JAMF, macOS, Windows, Active Directory, Mimecast</div>
-      </div>
-    </div>
-  </section>
+<!-- Security column -->
+<div style="background: #FFFFFF; border: 1px solid #E7E5E4; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; align-items: center; gap: 12px">
+<svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1E6B4E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"></path></svg>
+<h3 style="margin: 0; font-size: 20px; font-weight: 600">Security <span style="color: #57534E; font-weight: 500">· 8</span></h3>
+</div>
+<div>
+<span style="display: inline-block; padding: 3px 10px; border-radius: 999px; background: #1C1917; color: #FFFFFF; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase">Expert</span>
+<ul style="margin: 8px 0 0; padding: 0; list-style: none">
+<li style="display: flex; gap: 12px; padding: 8px 0"><strong style="min-width: 64px">SC-100</strong><span style="color: #44403C">Cybersecurity Architect</span></li>
+</ul>
+</div>
+<div>
+<span style="display: inline-block; padding: 3px 10px; border-radius: 999px; background: #D5EBE0; color: #14523B; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase">Associate</span>
+<ul style="margin: 8px 0 0; padding: 0; list-style: none">
+<li style="display: flex; gap: 12px; padding: 8px 0"><strong style="min-width: 64px">SC-500</strong><span style="color: #44403C">Cloud &amp; AI Security Engineer</span></li>
+<li style="display: flex; gap: 12px; padding: 8px 0; border-top: 1px solid #F5F5F4"><strong style="min-width: 64px">AZ-500</strong><span style="color: #44403C">Azure Security Engineer</span></li>
+<li style="display: flex; gap: 12px; padding: 8px 0; border-top: 1px solid #F5F5F4"><strong style="min-width: 64px">SC-200</strong><span style="color: #44403C">Security Operations Analyst</span></li>
+<li style="display: flex; gap: 12px; padding: 8px 0; border-top: 1px solid #F5F5F4"><strong style="min-width: 64px">SC-300</strong><span style="color: #44403C">Identity &amp; Access Administrator</span></li>
+<li style="display: flex; gap: 12px; padding: 8px 0; border-top: 1px solid #F5F5F4"><strong style="min-width: 64px">SC-401</strong><span style="color: #44403C">Information Security Administrator</span></li>
+</ul>
+</div>
+<div>
+<span style="display: inline-block; padding: 3px 10px; border-radius: 999px; background: #F5F5F4; color: #44403C; border: 1px solid #D6D3D1; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase">Business &amp; Fundamentals</span>
+<ul style="margin: 8px 0 0; padding: 0; list-style: none">
+<li style="display: flex; gap: 12px; padding: 8px 0"><strong style="min-width: 64px">SC-900</strong><span style="color: #44403C">Security, Compliance &amp; Identity</span></li>
+<li style="display: flex; gap: 12px; padding: 8px 0; border-top: 1px solid #F5F5F4"><strong style="min-width: 64px">Beta</strong><span style="color: #44403C">Cybersecurity Business Professional</span></li>
+</ul>
+</div>
+</div>
 
-  <section id="certs">
-    <p class="label">Certifications</p>
-    <div class="certs">
+<!-- AI Business Solutions column -->
+<div style="background: #FFFFFF; border: 1px solid #E7E5E4; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; align-items: center; gap: 12px">
+<svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1E6B4E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="1.5"></rect><rect x="13" y="3" width="8" height="8" rx="1.5"></rect><rect x="3" y="13" width="8" height="8" rx="1.5"></rect><rect x="13" y="13" width="8" height="8" rx="1.5"></rect></svg>
+<h3 style="margin: 0; font-size: 20px; font-weight: 600">AI Business Solutions <span style="color: #57534E; font-weight: 500">· 7</span></h3>
+</div>
+<div>
+<span style="display: inline-block; padding: 3px 10px; border-radius: 999px; background: #1C1917; color: #FFFFFF; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase">Expert</span>
+<ul style="margin: 8px 0 0; padding: 0; list-style: none">
+<li style="display: flex; gap: 12px; padding: 8px 0"><strong style="min-width: 64px">MS-102</strong><span style="color: #44403C">Microsoft 365 Administrator</span></li>
+</ul>
+</div>
+<div>
+<span style="display: inline-block; padding: 3px 10px; border-radius: 999px; background: #D5EBE0; color: #14523B; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase">Associate</span>
+<ul style="margin: 8px 0 0; padding: 0; list-style: none">
+<li style="display: flex; gap: 12px; padding: 8px 0"><strong style="min-width: 64px">AB-650</strong><span style="color: #44403C">Microsoft 365 &amp; AI Services Administrator</span></li>
+<li style="display: flex; gap: 12px; padding: 8px 0; border-top: 1px solid #F5F5F4"><strong style="min-width: 64px">MD-102</strong><span style="color: #44403C">Endpoint Administrator</span></li>
+<li style="display: flex; gap: 12px; padding: 8px 0; border-top: 1px solid #F5F5F4"><strong style="min-width: 64px">MS-700</strong><span style="color: #44403C">Teams Administrator</span></li>
+</ul>
+</div>
+<div>
+<span style="display: inline-block; padding: 3px 10px; border-radius: 999px; background: #F5F5F4; color: #44403C; border: 1px solid #D6D3D1; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase">Business &amp; Fundamentals</span>
+<ul style="margin: 8px 0 0; padding: 0; list-style: none">
+<li style="display: flex; gap: 12px; padding: 8px 0"><strong style="min-width: 64px">AB-731</strong><span style="color: #44403C">AI Transformation Leader</span></li>
+<li style="display: flex; gap: 12px; padding: 8px 0; border-top: 1px solid #F5F5F4"><strong style="min-width: 64px">AB-900</strong><span style="color: #44403C">Copilot &amp; Agent Administration</span></li>
+<li style="display: flex; gap: 12px; padding: 8px 0; border-top: 1px solid #F5F5F4"><strong style="min-width: 64px">MS-900</strong><span style="color: #44403C">Microsoft 365</span></li>
+</ul>
+</div>
+</div>
 
-      <div class="cert-group">
-        <div class="cert-group-name">Microsoft — Security</div>
-        <div class="cert-list">
-          <div class="cert-item"><span class="cert-code">SC-100</span>Microsoft Certified: Cybersecurity Architect Expert</div>
-          <div class="cert-item"><span class="cert-code">SC-300</span>Microsoft Certified: Identity and Access Administrator Associate</div>
-          <div class="cert-item"><span class="cert-code">SC-200</span>Microsoft Certified: Security Operations Analyst Associate</div>
-          <div class="cert-item"><span class="cert-code">SC-401</span>Microsoft Certified: Information Protection and Compliance Administrator Associate</div>
-          <div class="cert-item"><span class="cert-code">AZ-500</span>Microsoft Certified: Azure Security Engineer Associate</div>
-          <div class="cert-item"><span class="cert-code">SC-500</span>Microsoft Certified: Cloud and AI Security Engineer</div>
-          <div class="cert-item"><span class="cert-code">SC-900</span>Microsoft Certified: Security, Compliance, and Identity Fundamentals</div>
-        </div>
-      </div>
+<!-- Cloud & AI Platforms column -->
+<div style="background: #FFFFFF; border: 1px solid #E7E5E4; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; align-items: center; gap: 12px">
+<svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1E6B4E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18h10a4 4 0 0 0 .5-7.97A6 6 0 0 0 6 9.5 4.25 4.25 0 0 0 7 18z"></path></svg>
+<h3 style="margin: 0; font-size: 20px; font-weight: 600">Cloud &amp; AI Platforms <span style="color: #57534E; font-weight: 500">· 3</span></h3>
+</div>
+<div>
+<span style="display: inline-block; padding: 3px 10px; border-radius: 999px; background: #D5EBE0; color: #14523B; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase">Associate</span>
+<ul style="margin: 8px 0 0; padding: 0; list-style: none">
+<li style="display: flex; gap: 12px; padding: 8px 0"><strong style="min-width: 64px">AZ-104</strong><span style="color: #44403C">Azure Administrator</span></li>
+</ul>
+</div>
+<div>
+<span style="display: inline-block; padding: 3px 10px; border-radius: 999px; background: #F5F5F4; color: #44403C; border: 1px solid #D6D3D1; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase">Fundamentals</span>
+<ul style="margin: 8px 0 0; padding: 0; list-style: none">
+<li style="display: flex; gap: 12px; padding: 8px 0"><strong style="min-width: 64px">AZ-900</strong><span style="color: #44403C">Azure</span></li>
+<li style="display: flex; gap: 12px; padding: 8px 0; border-top: 1px solid #F5F5F4"><strong style="min-width: 64px">DP-900</strong><span style="color: #44403C">Azure Data</span></li>
+</ul>
+</div>
+</div>
+</div>
 
-      <div class="cert-group">
-        <div class="cert-group-name">Microsoft — Administration</div>
-        <div class="cert-list">
-          <div class="cert-item"><span class="cert-code">MS-102</span>Microsoft 365 Certified: Administrator Expert</div>
-          <div class="cert-item"><span class="cert-code">MD-102</span>Microsoft 365 Certified: Endpoint Administrator Associate</div>
-          <div class="cert-item"><span class="cert-code">AZ-104</span>Microsoft Certified: Azure Administrator Associate</div>
-          <div class="cert-item"><span class="cert-code">MS-700</span>Microsoft 365 Certified: Teams Administrator Associate</div>
-          <div class="cert-item"><span class="cert-code">AB-650</span>Microsoft 365 and AI Services Administration</div>
-        </div>
-      </div>
+<!-- Other vendors -->
+<h3 style="margin: 32px 0 12px; font-size: 14px; color: #57534E; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em">Other vendors · 4</h3>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1px; background: #E7E5E4; border: 1px solid #E7E5E4; border-radius: 16px; overflow: hidden">
+<div style="background: #FFFFFF; padding: 18px 22px"><div style="font-size: 13px; color: #57534E">CompTIA</div><div style="font-weight: 600; font-size: 17px">Security+</div></div>
+<div style="background: #FFFFFF; padding: 18px 22px"><div style="font-size: 13px; color: #57534E">Google</div><div style="font-weight: 600; font-size: 17px">Associate Workspace Administrator</div></div>
+<div style="background: #FFFFFF; padding: 18px 22px"><div style="font-size: 13px; color: #57534E">Jamf</div><div style="font-weight: 600; font-size: 17px">Jamf Pro Associate</div></div>
+<div style="background: #FFFFFF; padding: 18px 22px"><div style="font-size: 13px; color: #57534E">Jamf</div><div style="font-weight: 600; font-size: 17px">Jamf Protect Associate</div></div>
+</div>
+</section>
 
-      <div class="cert-group">
-        <div class="cert-group-name">CompTIA</div>
-        <div class="cert-list">
-          <div class="cert-item">CompTIA A+</div>
-          <div class="cert-item">CompTIA Network+</div>
-          <div class="cert-item">CompTIA Security+</div>
-        </div>
-      </div>
+<!-- Skills -->
+<section aria-labelledby="skills-h" style="max-width: 1120px; margin: 0 auto; padding: 80px 24px 0">
+<h2 id="skills-h" style="margin: 0 0 24px; font-family: 'Bricolage Grotesque', 'DM Sans', sans-serif; font-size: 34px; letter-spacing: 0">Tech stack</h2>
+<div style="display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center"><span style="width: 180px; font-size: 14px; font-weight: 600; color: #57534E">M365 &amp; Security</span>
+<span style="padding: 6px 12px; border-radius: 6px; background: #E8F3EE; color: #14523B; font-size: 14px; font-weight: 500">Entra ID</span><span style="padding: 6px 12px; border-radius: 6px; background: #E8F3EE; color: #14523B; font-size: 14px; font-weight: 500">Conditional Access</span><span style="padding: 6px 12px; border-radius: 6px; background: #E8F3EE; color: #14523B; font-size: 14px; font-weight: 500">Intune</span><span style="padding: 6px 12px; border-radius: 6px; background: #E8F3EE; color: #14523B; font-size: 14px; font-weight: 500">Defender</span><span style="padding: 6px 12px; border-radius: 6px; background: #E8F3EE; color: #14523B; font-size: 14px; font-weight: 500">Purview</span><span style="padding: 6px 12px; border-radius: 6px; background: #E8F3EE; color: #14523B; font-size: 14px; font-weight: 500">KQL</span><span style="padding: 6px 12px; border-radius: 6px; background: #E8F3EE; color: #14523B; font-size: 14px; font-weight: 500">Exchange Online</span><span style="padding: 6px 12px; border-radius: 6px; background: #E8F3EE; color: #14523B; font-size: 14px; font-weight: 500">SharePoint</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center"><span style="width: 180px; font-size: 14px; font-weight: 600; color: #57534E">Identity &amp; platforms</span>
+<span style="padding: 6px 12px; border-radius: 6px; background: #F5F5F4; color: #1C1917; font-size: 14px; font-weight: 500">Okta SSO</span><span style="padding: 6px 12px; border-radius: 6px; background: #F5F5F4; color: #1C1917; font-size: 14px; font-weight: 500">Active Directory</span><span style="padding: 6px 12px; border-radius: 6px; background: #F5F5F4; color: #1C1917; font-size: 14px; font-weight: 500">Google Workspace</span><span style="padding: 6px 12px; border-radius: 6px; background: #F5F5F4; color: #1C1917; font-size: 14px; font-weight: 500">JAMF</span><span style="padding: 6px 12px; border-radius: 6px; background: #F5F5F4; color: #1C1917; font-size: 14px; font-weight: 500">macOS</span><span style="padding: 6px 12px; border-radius: 6px; background: #F5F5F4; color: #1C1917; font-size: 14px; font-weight: 500">Windows</span><span style="padding: 6px 12px; border-radius: 6px; background: #F5F5F4; color: #1C1917; font-size: 14px; font-weight: 500">Mimecast</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center"><span style="width: 180px; font-size: 14px; font-weight: 600; color: #57534E">Automation</span>
+<span style="padding: 6px 12px; border-radius: 6px; background: #F5F5F4; color: #1C1917; font-size: 14px; font-weight: 500">PowerShell</span><span style="padding: 6px 12px; border-radius: 6px; background: #F5F5F4; color: #1C1917; font-size: 14px; font-weight: 500">Python</span><span style="padding: 6px 12px; border-radius: 6px; background: #F5F5F4; color: #1C1917; font-size: 14px; font-weight: 500">Microsoft Graph API</span><span style="padding: 6px 12px; border-radius: 6px; background: #F5F5F4; color: #1C1917; font-size: 14px; font-weight: 500">REST APIs</span><span style="padding: 6px 12px; border-radius: 6px; background: #F5F5F4; color: #1C1917; font-size: 14px; font-weight: 500">HaloITSM API</span></div>
+</div>
+</section>
 
-      <div class="cert-group">
-        <div class="cert-group-name">Multi-platform</div>
-        <div class="cert-list">
-          <div class="cert-item">Google Workspace Associate Administrator</div>
-          <div class="cert-item">Jamf Certified Associate — Jamf Pro</div>
-          <div class="cert-item">Jamf Certified Associate — Jamf Protect</div>
-        </div>
-      </div>
+<!-- Contact (full-width band) -->
+<section id="contact" style="margin-top: 104px; background: #1C1917; color: #FAFAF9">
+<div style="max-width: 1120px; margin: 0 auto; padding: 72px 24px; display: flex; flex-wrap: wrap; gap: 32px 64px; align-items: center; justify-content: space-between">
+<div style="flex: 999 1 420px; min-width: 0">
+<h2 style="margin: 0 0 12px; font-family: 'Bricolage Grotesque', 'DM Sans', sans-serif; font-size: 44px; line-height: 1.15; font-weight: 600">Need M365 security cover?</h2>
+<p style="margin: 0; color: #D6D3D1; font-size: 18px">Send the role spec and I'll reply the same working day with availability and rate.</p>
+</div>
+<div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 12px">
+<a href="mailto:callum@callum-reilly.co.uk" style="display: flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 22px; border-radius: 10px; background: #FFFFFF; color: #1C1917; text-decoration: none; font-weight: 600">callum@callum-reilly.co.uk</a>
+<a href="tel:+447494879937" style="display: flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 22px; border-radius: 10px; border: 1px solid #A8A29E; color: #FAFAF9; text-decoration: none; font-weight: 600">+44 (0)7494 879937</a>
+<a href="Callum-Reilly-CV.pdf" download style="display: flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 22px; border-radius: 10px; border: 1px solid #A8A29E; color: #FAFAF9; text-decoration: none; font-weight: 600">Download CV (PDF)</a>
+</div>
+</div>
+</section>
 
-      <div class="cert-group">
-        <div class="cert-group-name">AI</div>
-        <div class="cert-list">
-          <div class="cert-item"><span class="cert-code">AB-900</span>Microsoft 365 Copilot and Agent Administration Fundamentals</div>
-          <div class="cert-item"><span class="cert-code">AB-731</span>AI Transformation Leader</div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <section id="projects">
-    <p class="label">Selected projects</p>
-    <div class="projects">
-
-      <div class="project">
-        <div class="project-name">Okta security platform</div>
-        <div class="project-desc">Co-built with a client IT manager: an Okta SSO platform of three web apps for IT and C-suite. <em>Dropbox Audit</em> gives a live audit of permissions, users and devices with exportable reports. <em>Okta Alerting</em> sends real-time Slack alerts on identity events and policy violations, replacing manual log review. <em>Brivo Access Monitor</em> sends Slack alerts on building entry events, alarm status and out-of-hours access.</div>
-        <div class="project-tags">
-          <span class="tag-pill">Okta SSO</span>
-          <span class="tag-pill">Dropbox API</span>
-          <span class="tag-pill">Brivo API</span>
-          <span class="tag-pill">Slack webhooks</span>
-        </div>
-      </div>
-      <div class="project">
-        <div class="project-name">Phishing-resistant MFA rollout</div>
-        <div class="project-desc">Implemented FIDO security keys enforced through Conditional Access and a new authentication context, and built an audit report to track adoption and coverage.</div>
-        <div class="project-tags">
-          <span class="tag-pill">Entra ID</span>
-          <span class="tag-pill">Conditional Access</span>
-          <span class="tag-pill">FIDO</span>
-        </div>
-      </div>
-      <div class="project">
-        <div class="project-name">SharePoint permissions auditor</div>
-        <div class="project-desc">Automatically maps access rights across multi-tenant SharePoint environments, surfacing overprivileged users and orphaned permissions. Replaced a manual review process with no consistent cadence.</div>
-        <div class="project-tags">
-          <span class="tag-pill">Python</span>
-          <span class="tag-pill">Microsoft Graph API</span>
-          <span class="tag-pill">Multi-tenant</span>
-        </div>
-      </div>
-      <div class="project">
-        <div class="project-name">M365 license auditor</div>
-        <div class="project-desc">Automated tool using Microsoft Graph API to identify unused M365 licenses across the tenant, feeding directly into cost reduction decisions for clients.</div>
-        <div class="project-tags">
-          <span class="tag-pill">Python</span>
-          <span class="tag-pill">Microsoft Graph API</span>
-          <span class="tag-pill">Cost optimisation</span>
-        </div>
-      </div>
-      <div class="project">
-        <div class="project-name">Okta ↔ Push Security data sync</div>
-        <div class="project-desc">Custom data sync between Okta and Push Security where no native integration existed, keeping identity and browser-security data aligned without manual exports.</div>
-        <div class="project-tags">
-          <span class="tag-pill">Okta API</span>
-          <span class="tag-pill">Push Security API</span>
-          <span class="tag-pill">Python</span>
-        </div>
-      </div>
-      <div class="project">
-        <div class="project-name">KnowBe4 automated compliance reporting</div>
-        <div class="project-desc">Built an automated reporting system using the KnowBe4 API that generates formatted compliance reports on a schedule, eliminating the manual data compilation that previously took hours each cycle.</div>
-        <div class="project-tags">
-          <span class="tag-pill">KnowBe4 API</span>
-          <span class="tag-pill">Python</span>
-          <span class="tag-pill">Compliance</span>
-        </div>
-      </div>
-
-    </div>
-    <details class="more">
-      <summary><span class="closed">Show 7 more projects</span><span class="opened">Hide extra projects</span></summary>
-      <div class="projects">
-
-      <div class="project">
-        <div class="project-name">HaloITSM management reporting</div>
-        <div class="project-desc">Rebuilt management ticket reporting for the business using the HaloITSM API, replacing manual reporting with a consistent, repeatable view of service performance.</div>
-        <div class="project-tags">
-          <span class="tag-pill">HaloITSM API</span>
-          <span class="tag-pill">Python</span>
-          <span class="tag-pill">Reporting</span>
-        </div>
-      </div>
-      <div class="project">
-        <div class="project-name">Push Security — AI platform audit dashboard</div>
-        <div class="project-desc">Rebuilt a client's Push Security dashboard using the API to audit AI platforms being accessed across the business — giving security teams a clear, up-to-date view of shadow AI usage and associated risk.</div>
-        <div class="project-tags">
-          <span class="tag-pill">Push Security API</span>
-          <span class="tag-pill">Python</span>
-          <span class="tag-pill">Shadow AI</span>
-        </div>
-      </div>
-      <div class="project">
-        <div class="project-name">Standard Metrics dashboard rebuild</div>
-        <div class="project-desc">Rebuilt a client's Standard Metrics implementation using the platform's API to better fit business needs, with a specific focus on tracking outstanding filings. Turned a generic dashboard into a focused operational tool the team actually relies on.</div>
-        <div class="project-tags">
-          <span class="tag-pill">Standard Metrics API</span>
-          <span class="tag-pill">Python</span>
-          <span class="tag-pill">Internal tooling</span>
-        </div>
-      </div>
-      <div class="project">
-        <div class="project-name">Code42 suspicious file sharing reports</div>
-        <div class="project-desc">Built a custom scripted reporting tool that collates Code42 suspicious file sharing activity into a formatted Excel report on demand — one click instead of manually pulling and cross-referencing data from multiple views.</div>
-        <div class="project-tags">
-          <span class="tag-pill">Code42 API</span>
-          <span class="tag-pill">Python</span>
-          <span class="tag-pill">Excel / openpyxl</span>
-        </div>
-      </div>
-      <div class="project">
-        <div class="project-name">Meraki → Slack security alerts</div>
-        <div class="project-desc">Custom integration connecting Meraki Security Centre to Slack via webhooks, automating MX security alert notifications and eliminating manual log monitoring entirely.</div>
-        <div class="project-tags">
-          <span class="tag-pill">Meraki API</span>
-          <span class="tag-pill">Slack webhooks</span>
-          <span class="tag-pill">Automation</span>
-        </div>
-      </div>
-      <div class="project">
-        <div class="project-name">Apple Business Manager → Slack device alerts</div>
-        <div class="project-desc">Integrated Apple Business Manager with Slack to deliver real-time notifications on device registrations, releases, and MDM status changes — replacing the need to manually monitor ABM for fleet activity.</div>
-        <div class="project-tags">
-          <span class="tag-pill">Apple Business Manager API</span>
-          <span class="tag-pill">Slack webhooks</span>
-          <span class="tag-pill">MDM</span>
-        </div>
-      </div>
-      <div class="project">
-        <div class="project-name">Politburo Council</div>
-        <div class="project-desc">A Claude Code skill that adds eight historical Soviet-era leader personas — Lenin, Stalin, Khrushchev, Brezhnev, Andropov, Chernenko, Gorbachev, and wildcard Yeltsin — for reviewing work. Run one persona or the full council to surface genuine disagreement between distinct risk and change philosophies, on code, writing, strategy, or planning.</div>
-        <div class="project-tags">
-          <span class="tag-pill">Claude Code</span>
-          <span class="tag-pill">AI Skill</span>
-          <span class="tag-pill"><a href="https://github.com/CallumReilly-Work/politburo-council" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">GitHub ↗</a></span>
-        </div>
-      </div>
-
-      </div>
-    </details>
-  </section>
-
-  <section id="contact">
-    <p class="label">Contact</p>
-    <div class="contact-list">
-      <div class="contact-row">
-        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
-        <a href="mailto:callum@callum-reilly.co.uk">callum@callum-reilly.co.uk</a>
-      </div>
-      <div class="contact-row">
-        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
-        <a href="tel:+447494879937">+44 (0)7494 879937</a>
-      </div>
-      <div class="contact-row">
-        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        <a href="https://www.linkedin.com/in/callum-reilly-" target="_blank" rel="noopener">linkedin.com/in/callum-reilly-</a>
-      </div>
-      <div class="contact-row">
-        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-        <a href="https://github.com/CallumReilly-Work" target="_blank" rel="noopener">github.com/CallumReilly-Work</a>
-      </div>
-      <div class="contact-row">
-        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
-        <span>London, UK</span>
-      </div>
-    </div>
-    <div style="margin-top: 1.25rem;">
-      <a href="mailto:callum@callum-reilly.co.uk?subject=Opportunity%20for%20Callum%20Reilly" class="btn btn-primary">
-        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
-        Get in touch
-      </a>
-    </div>
-  </section>
-
-  <footer>
-    <p>BSc (Hons) Business Information Technology, 1st Class · Birmingham City University · 2014 – 2017</p>
-  </footer>
-
+<footer style="max-width: 1120px; margin: 0 auto; padding: 32px 24px 48px; display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; color: #57534E; font-size: 14px">
+<span>[COMPANY NAME] Ltd · Registered in England &amp; Wales No. [NUMBER]</span>
+<span>London, UK · <a href="https://www.linkedin.com/in/callum-reilly-/">LinkedIn</a> · <a href="https://github.com/CallumReilly-Work">GitHub</a></span>
+</footer>
 </div>
 </body>
 </html>
